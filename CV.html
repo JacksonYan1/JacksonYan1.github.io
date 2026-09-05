@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chengzhi Yan | Personal Homepage</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      :root {
+        --primary: #1a56db;
+        --primary-light: #3b82f6;
+        --primary-bg: #eef2ff;
+        --text-primary: #0f172a;
+        --text-secondary: #334155;
+        --text-tertiary: #64748b;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --border-subtle: #e2e8f0;
+        --shadow-card:
+          0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
+        --shadow-card-hover:
+          0 4px 12px rgba(26, 86, 219, 0.08), 0 12px 28px rgba(15, 23, 42, 0.08);
+      }
+      body {
+        font-family:
+          "Segoe UI", "Helvetica Neue", Calibri, "PingFang SC", sans-serif;
+        background: var(--bg-page);
+        color: var(--text-primary);
+        line-height: 1.75;
+        letter-spacing: 0.01em;
+      }
+
+      /* 导航栏 - 毛玻璃滚动效果 */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+        transition: all 0.3s ease;
+      }
+      nav.scrolled {
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+        border-bottom-color: transparent;
+      }
+      .nav-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 14px 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .nav-logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary);
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 28px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: thin;
+      }
+      .nav-menu::-webkit-scrollbar {
+        height: 3px;
+      }
+      .nav-menu::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+      }
+      .nav-menu a {
+        position: relative;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        padding: 6px 0;
+        transition: color 0.2s ease;
+      }
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 1px;
+        transition: width 0.25s ease;
+      }
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+      .nav-menu a:hover::after {
+        width: 100%;
+      }
+      .nav-menu a.active {
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .nav-menu a.active::after {
+        width: 100%;
+      }
+
+      /* 主容器 */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 36px 28px 80px;
+      }
+
+      /* Hero 头部 */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #1d4ed8 0%,
+          #2563eb 50%,
+          #3b82f6 100%
+        );
+        color: #fff;
+        border-radius: 16px;
+        padding: 52px 48px;
+        box-shadow: var(--shadow-card);
+        margin-bottom: 32px;
+      }
+      .hero h1 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        margin-bottom: 12px;
+      }
+      .hero-contact {
+        font-size: 1rem;
+        opacity: 0.92;
+        line-height: 1.6;
+      }
+
+      /* 通用卡片 */
+      .card {
+        background: var(--bg-card);
+        border-radius: 14px;
+        padding: 32px 36px;
+        box-shadow: var(--shadow-card);
+        margin-bottom: 24px;
+        scroll-margin-top: 88px;
+        transition: all 0.25s ease;
+        border: 1px solid transparent;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-card-hover);
+        border-color: rgba(59, 130, 246, 0.15);
+      }
+
+      /* 板块标题 */
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-title::before {
+        content: "";
+        width: 5px;
+        height: 24px;
+        background: var(--primary);
+        border-radius: 3px;
+      }
+
+      /* 项目块 - 标题时间左右分离 */
+      .item {
+        margin-bottom: 30px;
+        padding-left: 16px;
+        border-left: 2px solid #e2e8f0;
+      }
+      .item:last-child {
+        margin-bottom: 0;
+      }
+      .item-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        align-items: baseline;
+        margin-bottom: 8px;
+      }
+      .item-title {
+        font-weight: 600;
+        font-size: 1.08rem;
+        color: var(--text-primary);
+      }
+      .item-date {
+        color: var(--text-tertiary);
+        font-size: 0.95rem;
+        white-space: nowrap;
+        text-align: right;
+      }
+      .item-supervisor {
+        font-size: 0.95rem;
+        color: var(--text-tertiary);
+        margin-bottom: 10px;
+      }
+      .item ul {
+        padding-left: 26px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+      }
+      .item li {
+        margin-bottom: 8px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
+      .item-link {
+        font-size: 0.95rem;
+      }
+      .item-link a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .item-link a:hover {
+        text-decoration: underline;
+      }
+
+      /* 专利卡片 */
+      .patent-item {
+        margin-bottom: 16px;
+        padding: 14px 18px;
+        background: #f8fafc;
+        border-radius: 10px;
+        border-left: 3px solid var(--primary-light);
+        transition: all 0.2s ease;
+      }
+      .patent-item:last-child {
+        margin-bottom: 0;
+      }
+      .patent-item:hover {
+        background: #f1f5f9;
+      }
+      .patent-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .patent-meta {
+        font-size: 0.92rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
+      /* 专利证书按钮 */
+      .patent-cert-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px 14px;
+        background: var(--primary-bg);
+        color: var(--primary);
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .patent-cert-btn:hover {
+        background: var(--primary);
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* 技能标签 - 分级配色 */
+      .skill-group {
+        margin-bottom: 18px;
+      }
+      .skill-group:last-child {
+        margin-bottom: 0;
+      }
+      .skill-label {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        font-size: 1.02rem;
+      }
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        transition: all 0.2s ease;
+      }
+      .tag-proficient {
+        background: var(--primary);
+        color: #fff;
+      }
+      .tag-skilled {
+        background: var(--primary-bg);
+        color: var(--primary);
+      }
+      .tag-familiar {
+        background: #f1f5f9;
+        color: var(--text-secondary);
+        border: 1px solid #e2e8f0;
+      }
+      .tag:hover {
+        transform: translateY(-1px);
+      }
+
+      /* 页脚 */
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--text-tertiary);
+        margin-top: 48px;
+      }
+
+      /* 返回顶部 */
+      #backTop {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(26, 86, 219, 0.3);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 99;
+      }
+      #backTop.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #backTop:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(26, 86, 219, 0.35);
+      }
+
+      /* 移动端适配 */
+      @media (max-width: 768px) {
+        .nav-inner {
+          padding: 12px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+        .nav-menu {
+          gap: 20px;
+          width: 100%;
+        }
+        .container {
+          padding: 24px 18px 60px;
+        }
+        .hero {
+          padding: 36px 28px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .card {
+          padding: 24px 22px;
+        }
+        .item-header {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+        .item-date {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="nav-inner">
+        <div class="nav-logo">CHENGZHI YAN</div>
+        <div class="nav-menu">
+          <a href="#interests" data-target="interests">Interests</a>
+          <a href="#education" data-target="education">Education</a>
+          <a href="#research" data-target="research">Research</a>
+          <a href="#patents" data-target="patents">Patents</a>
+          <a href="#internship" data-target="internship">Internship</a>
+          <a href="#skills" data-target="skills">Skills</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="hero">
+        <h1>CHENGZHI YAN</h1>
+        <div class="hero-contact">
+          Shenzhen, Guangdong, China &nbsp;|&nbsp; 1193387075@qq.com
+        </div>
+      </div>
+
+      <div class="card" id="interests">
+        <h2 class="section-title">Research Interests</h2>
+        <p style="color: var(--text-secondary)">
+          Artificial intelligence and machine-learning applications, with an
+          emphasis on healthcare-related computing. Interested in data
+          processing &amp; engineering, time-series modelling, multi-source data
+          integration, software system construction and AI-driven clinical
+          auxiliary solutions.
+        </p>
+      </div>
+
+      <div class="card" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              <strong>M.Sc. in Computer Science</strong>, University of Bristol,
+              UK
+            </div>
+            <div class="item-date">Sep. 2026 – Jun. 2027 (Expected)</div>
+          </div>
+          <p style="color: var(--text-secondary)">
+            Relevant Courses: Deep Learning, Sustainable Computing, Advanced
+            Topics in Computer Science, Individual Research Project
+          </p>
+        </div>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              <strong>B.Sc. in Computer Science</strong>, University of Bristol,
+              UK
+            </div>
+            <div class="item-date">Sep. 2022 – Jun. 2026</div>
+          </div>
+          <p style="color: var(--text-secondary)">
+            Relevant Courses: Artificial Intelligence, Software Engineering,
+            Algorithms, Computer Systems, Computer Architecture
+          </p>
+        </div>
+      </div>
+
+      <div class="card" id="research">
+        <h2 class="section-title">Research Experience</h2>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              Applied Data Science | Early Prediction of Sepsis
+            </div>
+            <div class="item-date">Sep. 2025 – Jun. 2026</div>
+          </div>
+          <div class="item-supervisor">Supervisor: Prof. Saptarshi Sinha</div>
+          <ul>
+            <li>
+              Developed machine-learning solutions for clinical predictive tasks
+              using real-world patient datasets.
+            </li>
+            <li>
+              Performed full-cycle dataset processing: data cleaning,
+              missing-value imputation, feature importance analysis and
+              multi-dimensional data quality assessment.
+            </li>
+            <li>
+              Built reusable automated data processing pipelines; implemented
+              hybrid time-series models including GRU-D + LightGBM and BRITS +
+              LSTM.
+            </li>
+            <li>
+              Gained hands-on experience in complex dataset engineering and
+              applying deep-learning techniques to domain-specific challenges.
+            </li>
+          </ul>
+          <div class="item-link">
+            GitHub:
+            <a
+              target="_blank"
+              href="https://github.com/billu615/Applied-Data-Science-CW-Sepsis.git"
+              >billu615/Applied-Data-Science-CW-Sepsis</a
+            >
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              Software Engineering | Children's Mental Health Website
+            </div>
+            <div class="item-date">Sep. 2023 – Sep. 2024</div>
+          </div>
+          <div class="item-supervisor">Supervisor: Prof. Sarah</div>
+          <ul>
+            <li>
+              Collaborated to build a web-based resource platform for
+              public-health-related content delivery.
+            </li>
+            <li>
+              Designed MongoDB data schemas and unified data entry standards;
+              managed data models and multi-type content assets.
+            </li>
+            <li>
+              Implemented front-end modules with EJS and JavaScript; constructed
+              backend services based on Node.js and Express.js.
+            </li>
+            <li>
+              Practised end-to-end web development, business-oriented data
+              modelling and structured content management.
+            </li>
+          </ul>
+          <div class="item-link">
+            GitHub:
+            <a
+              target="_blank"
+              href="https://github.com/spe-uob/2024-ThinkingSpace"
+              >spe-uob/2024-ThinkingSpace</a
+            >
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              Team Project | Unity VR Accessibility Simulation
+            </div>
+            <div class="item-date">Sep. 2025 – Jun. 2026</div>
+          </div>
+          <div class="item-supervisor">Supervisor: Prof. Sarah</div>
+          <ul>
+            <li>
+              Developed an immersive VR simulation targeting
+              accessibility-related research scenarios with Unity.
+            </li>
+            <li>
+              Managed heterogeneous assets including 3D scenes, character
+              resources and physiological sensor signals.
+            </li>
+            <li>
+              Deployed LSTM-based time-series model for signal detection,
+              integrated hardware tactile feedback via haptic vest.
+            </li>
+            <li>
+              Built practical engineering capabilities for multi-source
+              heterogeneous-data integration and interactive system development.
+            </li>
+          </ul>
+          <div class="item-link">
+            GitLab:
+            <a
+              target="_blank"
+              href="https://gitlab.com/justice-246/bttf/-/tree/dev/game?ref_type=heads"
+              >justice-246/bttf</a
+            >
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              Computer Systems | Conway's Game of Life Implemented in Go
+            </div>
+            <div class="item-date">Sep. 2024 – Jan. 2025</div>
+          </div>
+          <div class="item-supervisor">Supervisor: Prof. Tilo</div>
+          <ul>
+            <li>
+              Took part in project planning, literature review and formal
+              technical report writing.
+            </li>
+            <li>
+              Implemented cellular-automaton simulation in Go, including unit
+              testing and system-level performance optimisation.
+            </li>
+            <li>
+              Strengthened Go programming, performance tuning, literature survey
+              and academic technical-writing competencies.
+            </li>
+          </ul>
+          <div class="item-link">
+            GitHub:
+            <a target="_blank" href="https://github.com/chw002/CSA_001.git"
+              >chw002/CSA_001</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="patents">
+        <h2 class="section-title">Patents (Granted Utility Model Patents)</h2>
+        <div class="patent-item">
+          <div class="patent-title">Medical Radiation Protection Screen</div>
+          <div class="patent-meta">
+            Patent No. ZL202421476455.6 | Granted 2024<br />
+            Inventors: C. Yan (1st), X. Huang (2nd). Contribution: Led
+            mechanical-structure design for medical radiological shielding
+            hardware.
+          </div>
+          <a
+            class="patent-cert-btn"
+            target="_blank"
+            href="patent-medical-radiation-shield.pdf"
+            >View Patent Certificate</a
+          >
+        </div>
+        <div class="patent-item">
+          <div class="patent-title">Automatic Radiation Protection Screen</div>
+          <div class="patent-meta">
+            Patent No. ZL202120693771.9 | Granted 2021<br />
+            Inventors: Y. Yang (1st), C. Yan (2nd), J. He (3rd). Contribution:
+            Contributed to mechanical-structure and automatic-control design for
+            radiology-protection equipment.
+          </div>
+          <a
+            class="patent-cert-btn"
+            target="_blank"
+            href="patent-automatic-radiation-shield.pdf"
+            >View Patent Certificate</a
+          >
+        </div>
+        <div class="patent-item">
+          <div class="patent-title">
+            Electromagnetic Relay-Based Switching Control Circuit and Medical
+            X-ray Protection Device
+          </div>
+          <div class="patent-meta">
+            Patent No. ZL202420775618.4 | Granted 2024<br />
+            Inventors: D. Qin (1st), X. Huang (2nd), C. Yan (3rd). Contribution:
+            Participated in control-circuit logic design for medical X-ray
+            protective devices.
+          </div>
+          <a
+            class="patent-cert-btn"
+            target="_blank"
+            href="patent-xray-protection-circuit.pdf"
+            >View Patent Certificate</a
+          >
+        </div>
+      </div>
+
+      <div class="card" id="internship">
+        <h2 class="section-title">Internship</h2>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">
+              Ruitai Imaging Technology (Shenzhen) Co., Ltd. | Full-stack
+              Development Intern
+            </div>
+            <div class="item-date">DingTalk Open-Platform Ecosystem</div>
+          </div>
+          <ul>
+            <li>
+              Conducted end-to-end requirement analysis, database schema design
+              and full-stack application development.
+            </li>
+            <li>
+              Implemented procurement, warehousing and inventory-control modules
+              leveraging DingTalk API with Node.js, MongoDB and JavaScript.
+            </li>
+            <li>
+              Replaced offline manual ledger workflows; boosted warehouse
+              inbound-outbound efficiency by 40% and reduced manual-input
+              errors, enabling unified visualised business-data management.
+            </li>
+            <li>
+              Accumulated practical experience building enterprise-grade
+              data-centric systems and database optimisation for medical-related
+              informatics research.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skill-group">
+          <div class="skill-label">Programming Languages</div>
+          <div class="skill-tags">
+            <span class="tag tag-proficient">Python</span>
+            <span class="tag tag-proficient">Go</span>
+            <span class="tag tag-proficient">C#</span>
+            <span class="tag tag-proficient">JavaScript</span>
+            <span class="tag tag-skilled">C</span>
+            <span class="tag tag-skilled">Java</span>
+            <span class="tag tag-familiar">EJS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">AI &amp; Machine Learning</div>
+          <div class="skill-tags">
+            <span class="tag tag-proficient">TensorFlow</span>
+            <span class="tag tag-skilled">Scikit-learn</span>
+            <span class="tag tag-skilled">LightGBM</span>
+            <span class="tag tag-familiar">GRU / LSTM / BRITS</span>
+            <span class="tag tag-familiar">Feature Engineering</span>
+            <span class="tag tag-familiar">Data Pipeline</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Database, Systems &amp; Tools</div>
+          <div class="skill-tags">
+            <span class="tag tag-skilled">MongoDB</span>
+            <span class="tag tag-skilled">Express.js</span>
+            <span class="tag tag-skilled">Git / GitLab</span>
+            <span class="tag tag-skilled">Linux</span>
+            <span class="tag tag-familiar">Unity VR</span>
+            <span class="tag tag-familiar">Matplotlib</span>
+            <span class="tag tag-familiar">Seaborn</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Research &amp; Soft Skills</div>
+          <div class="skill-tags">
+            <span class="tag tag-skilled">Academic Writing</span>
+            <span class="tag tag-skilled">Experimental Design</span>
+            <span class="tag tag-skilled">Dataset Processing</span>
+            <span class="tag tag-skilled">Group Collaboration</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Language Proficiency</div>
+          <div class="skill-tags">
+            <span class="tag tag-proficient">Mandarin (Native)</span>
+            <span class="tag tag-skilled"
+              >English (Academic reading &amp; writing)</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <footer>&copy; 2026 CHENGZHI YAN</footer>
+    </div>
+
+    <button id="backTop">↑</button>
+
+    <script>
+      // 返回顶部 + 导航滚动效果
+      const backTopBtn = document.getElementById("backTop");
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backTopBtn.classList.add("show");
+        } else {
+          backTopBtn.classList.remove("show");
+        }
+        if (window.scrollY > 20) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      backTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // 滚动监听 - 导航自动高亮
+      const sections = document.querySelectorAll(".card[id]");
+      const navLinks = document.querySelectorAll(".nav-menu a[data-target]");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.dataset.target === id) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "-30% 0px -60% 0px",
+        },
+      );
+
+      sections.forEach((s) => observer.observe(s));
+    </script>
+  </body>
+</html>
