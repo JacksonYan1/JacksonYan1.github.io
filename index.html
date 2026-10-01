@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     <meta property="og:description" content="M.Sc. candidate in Computer Science at University of Bristol, focusing on AI for healthcare and multimodal medical imaging." />
     <meta property="og:type" content="website" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a4fd6'/%3E%3Ctext x='50' y='70' font-size='54' font-weight='bold' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EY%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" />
     <style>
       :root {
         --bg: #f5f7fb;
@@ -23,8 +23,8 @@
         --accent-deep: #143aa8;
         --accent-soft: #e9efff;
         --shadow: 0 1px 2px rgba(15, 26, 46, 0.04), 0 12px 32px rgba(15, 26, 46, 0.06);
-        --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
-        --font-body: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+        --font-display: "Source Serif 4", "Noto Serif SC", Georgia, "Songti SC", serif;
+        --font-body: "IBM Plex Sans", "Noto Sans SC", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
       }
       [data-theme="dark"] {
         --bg: #0a101d;
@@ -51,6 +51,10 @@
       }
       a { color: var(--accent); text-decoration: none; }
       a:hover { text-decoration: underline; }
+
+      /* ---------- i18n ---------- */
+      [data-lang="en"] .lang-zh { display: none !important; }
+      [data-lang="zh"] .lang-en { display: none !important; }
 
       /* ---------- nav ---------- */
       nav {
@@ -104,7 +108,7 @@
       .nav-menu a:hover { color: var(--text); background: var(--accent-soft); text-decoration: none; }
       .nav-menu a.active { color: var(--accent); background: var(--accent-soft); }
       .nav-tools { display: flex; align-items: center; gap: 4px; }
-      .theme-toggle {
+      .nav-icon-btn {
         width: 38px;
         height: 38px;
         border-radius: 50%;
@@ -118,7 +122,29 @@
         transition: all 0.2s ease;
         flex-shrink: 0;
       }
-      .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+      .nav-icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+      .lang-toggle {
+        height: 38px;
+        padding: 0 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--text-2);
+        cursor: pointer;
+        font-size: 0.88rem;
+        font-weight: 600;
+        font-family: var(--font-body);
+        letter-spacing: 0.03em;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+      .lang-toggle .zh { display: none; }
+      html[data-lang="zh"] .lang-toggle .zh { display: inline; }
+      html[data-lang="zh"] .lang-toggle .en { display: none; }
       .hamburger {
         display: none;
         flex-direction: column;
@@ -179,7 +205,7 @@
         font-family: var(--font-display);
         font-size: clamp(2.4rem, 5.4vw, 4.1rem);
         font-weight: 700;
-        line-height: 1.08;
+        line-height: 1.14;
         letter-spacing: 0.015em;
         margin-bottom: 18px;
         text-wrap: balance;
@@ -190,7 +216,7 @@
         color: #d5ddef;
         font-weight: 500;
         margin-bottom: 14px;
-        max-width: 30em;
+        max-width: 34em;
         animation: heroIn 0.7s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
       .hero-contact {
@@ -441,10 +467,10 @@
           transform: translateY(-8px);
           opacity: 0;
           pointer-events: none;
+          visibility: hidden;
           transition: all 0.25s ease;
         }
         .nav-menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; visibility: visible; }
-        .nav-menu { visibility: hidden; }
         .nav-menu a { padding: 10px 14px; width: 100%; font-size: 1rem; }
         .hero-inner { padding: 64px 20px 56px; }
         .container { padding: 44px 20px 52px; }
@@ -476,17 +502,20 @@
   <body>
     <nav id="navbar">
       <div class="nav-inner">
-        <div class="nav-logo">CHENGZHI<span>·</span>YAN</div>
+        <div class="nav-logo"><span class="lang-en">CHENGZHI<span>·</span>YAN</span><span class="lang-zh">鄢承志</span></div>
         <div class="nav-menu" id="navMenu">
-          <a href="#interests" data-target="interests">Interests</a>
-          <a href="#prospective-research" data-target="prospective-research">PhD Research</a>
-          <a href="#education" data-target="education">Education</a>
-          <a href="#research" data-target="research">Research</a>
-          <a href="#patents" data-target="patents">Patents</a>
-          <a href="#internship" data-target="internship">Internship</a>
-          <a href="#skills" data-target="skills">Skills</a>
+          <a href="#interests" data-target="interests"><span class="lang-en">Interests</span><span class="lang-zh">研究兴趣</span></a>
+          <a href="#prospective-research" data-target="prospective-research"><span class="lang-en">PhD Research</span><span class="lang-zh">博士研究</span></a>
+          <a href="#education" data-target="education"><span class="lang-en">Education</span><span class="lang-zh">教育背景</span></a>
+          <a href="#research" data-target="research"><span class="lang-en">Research</span><span class="lang-zh">研究经历</span></a>
+          <a href="#patents" data-target="patents"><span class="lang-en">Patents</span><span class="lang-zh">专利成果</span></a>
+          <a href="#internship" data-target="internship"><span class="lang-en">Internship</span><span class="lang-zh">实习经历</span></a>
+          <a href="#skills" data-target="skills"><span class="lang-en">Skills</span><span class="lang-zh">技能</span></a>
           <div class="nav-tools">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+              <span class="en">EN</span><span class="zh">中</span>
+            </button>
+            <button class="nav-icon-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
               <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
               <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
@@ -500,21 +529,21 @@
 
     <header class="hero">
       <div class="hero-inner">
-        <h1>CHENGZHI YAN</h1>
-        <p class="hero-tagline">M.Sc. Candidate in Computer Science&nbsp;|&nbsp;AI for Healthcare &amp; Multimodal Medical Imaging</p>
-        <p class="hero-contact">Shenzhen, Guangdong, China &nbsp;|&nbsp; <a href="mailto:1193387075@qq.com">1193387075@qq.com</a></p>
+        <h1><span class="lang-en">CHENGZHI YAN</span><span class="lang-zh">鄢承志</span></h1>
+        <p class="hero-tagline"><span class="lang-en">M.Sc. Candidate in Computer Science&nbsp;|&nbsp;AI for Healthcare &amp; Multimodal Medical Imaging</span><span class="lang-zh">计算机科学硕士在读&nbsp;|&nbsp;医疗人工智能与多模态医学影像</span></p>
+        <p class="hero-contact"><span class="lang-en">Shenzhen, Guangdong, China &nbsp;|&nbsp;</span><span class="lang-zh">中国 · 广东 · 深圳 &nbsp;|&nbsp;</span> <a href="mailto:1193387075@qq.com">1193387075@qq.com</a></p>
         <div class="hero-links">
           <a href="Chengzhi-Yan-CV.pdf" download class="hero-btn hero-btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download CV
+            <span class="lang-en">Download CV</span><span class="lang-zh">下载简历</span>
           </a>
           <a href="mailto:1193387075@qq.com" class="hero-btn hero-btn-ghost">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email
+            <span class="lang-en">Email</span><span class="lang-zh">邮箱</span>
           </a>
           <a href="https://github.com/JacksonYan1" target="_blank" rel="noopener" class="hero-btn hero-btn-ghost">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.417-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.423.366.823 1.096.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
+            <span class="lang-en">GitHub</span><span class="lang-zh">GitHub</span>
           </a>
         </div>
       </div>
@@ -524,12 +553,15 @@
       <!-- ===== section: interests ===== -->
       <section class="section" id="interests">
         <div class="section-head">
-          <h2>Research Interests</h2>
-          <span class="en">Focus</span>
+          <h2><span class="lang-en">Research Interests</span><span class="lang-zh">研究兴趣</span></h2>
+          <span class="en lang-en">Focus</span><span class="en lang-zh">方向</span>
         </div>
         <div class="lead">
-          <p>
+          <p class="lang-en">
             Artificial intelligence and machine-learning applications, with an emphasis on healthcare-related computing. Interested in data processing &amp; engineering, time-series modelling, multi-source data integration, software system construction and AI-driven clinical auxiliary solutions.
+          </p>
+          <p class="lang-zh">
+            人工智能与机器学习应用研究，重点关注医疗健康计算方向：数据处理与工程、时间序列建模、多源数据融合、软件系统构建，以及 AI 驱动的临床辅助解决方案。
           </p>
         </div>
       </section>
@@ -537,15 +569,21 @@
       <!-- ===== section: prospective research ===== -->
       <section class="section" id="prospective-research">
         <div class="section-head">
-          <h2>Prospective Doctoral Research</h2>
-          <span class="en">Ph.D. Focus</span>
+          <h2><span class="lang-en">Prospective Doctoral Research</span><span class="lang-zh">博士研究方向</span></h2>
+          <span class="en lang-en">Ph.D. Focus</span><span class="en lang-zh">博士重点</span>
         </div>
         <div class="lead">
-          <p>
+          <p class="lang-en">
             My doctoral research centres on <strong>multimodal AI fusion for intelligent quality verification of radiological diagnosis</strong>. By integrating medical imaging, diagnostic report text and patient clinical data, it aims to accurately identify missed diagnosis, misdiagnosis and inconsistent diagnostic logic.
           </p>
-          <p>
+          <p class="lang-en">
             Built on my proven experience in clinical time-series modelling, medical image AI evaluation, full-stack medical informatics development and patented medical radiation device design, this work addresses the key limitation of current single-modal medical AI, evolving from <em>passive lesion recognition</em> to <em>active cross-modal diagnostic logic supervision</em>.
+          </p>
+          <p class="lang-zh">
+            我的博士研究方向为<strong>多模态 AI 融合的放射诊断智能质控</strong>：通过整合医学影像、诊断报告文本与患者临床数据，旨在精准识别漏诊、误诊与不一致的诊断逻辑。
+          </p>
+          <p class="lang-zh">
+            基于我在临床时间序列建模、医学影像 AI 评估、全栈医疗信息学开发及医疗辐射防护设备专利方面的实践积累，该研究直指当前单模态医疗 AI 的关键局限，从<em>被动病灶识别</em>走向<em>主动的跨模态诊断逻辑监督</em>。
           </p>
         </div>
       </section>
@@ -553,24 +591,24 @@
       <!-- ===== section: education ===== -->
       <section class="section" id="education">
         <div class="section-head">
-          <h2>Education</h2>
-          <span class="en">Academic</span>
+          <h2><span class="lang-en">Education</span><span class="lang-zh">教育背景</span></h2>
+          <span class="en lang-en">Academic</span><span class="en lang-zh">学历</span>
         </div>
         <div class="timeline">
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">Sep 2026 – Jun 2027<br /><span style="opacity:.8;">Expected</span></div>
+            <div class="tl-date"><span class="lang-en">Sep 2026 – Jun 2027<br /><span style="opacity:.8;">Expected</span></span><span class="lang-zh">2026.09 – 2027.06<br /><span style="opacity:.8;">预计</span></span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">M.Sc. in Computer Science — University of Bristol, UK</div>
-              <div class="tl-meta">Deep Learning · Sustainable Computing · Advanced Topics in Computer Science · Individual Research Project</div>
+              <div class="tl-title"><span class="lang-en">M.Sc. in Computer Science — University of Bristol, UK</span><span class="lang-zh">计算机科学硕士 — 英国布里斯托大学</span></div>
+              <div class="tl-meta"><span class="lang-en">Deep Learning · Sustainable Computing · Advanced Topics in Computer Science · Individual Research Project</span><span class="lang-zh">深度学习 · 可持续计算 · 计算机科学前沿专题 · 个人研究项目</span></div>
             </div>
           </div>
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">Sep 2022 – Jun 2026</div>
+            <div class="tl-date"><span class="lang-en">Sep 2022 – Jun 2026</span><span class="lang-zh">2022.09 – 2026.06</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">B.Sc. in Computer Science — University of Bristol, UK</div>
-              <div class="tl-meta">Artificial Intelligence · Software Engineering · Algorithms · Computer Systems · Computer Architecture</div>
+              <div class="tl-title"><span class="lang-en">B.Sc. in Computer Science — University of Bristol, UK</span><span class="lang-zh">计算机科学学士 — 英国布里斯托大学</span></div>
+              <div class="tl-meta"><span class="lang-en">Artificial Intelligence · Software Engineering · Algorithms · Computer Systems · Computer Architecture</span><span class="lang-zh">人工智能 · 软件工程 · 算法 · 计算机系统 · 计算机体系结构</span></div>
             </div>
           </div>
         </div>
@@ -579,22 +617,28 @@
       <!-- ===== section: research ===== -->
       <section class="section" id="research">
         <div class="section-head">
-          <h2>Research Experience</h2>
-          <span class="en">Projects</span>
+          <h2><span class="lang-en">Research Experience</span><span class="lang-zh">研究经历</span></h2>
+          <span class="en lang-en">Projects</span><span class="en lang-zh">项目</span>
         </div>
         <div class="timeline">
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">Sep 2025 – Jun 2026</div>
+            <div class="tl-date"><span class="lang-en">Sep 2025 – Jun 2026</span><span class="lang-zh">2025.09 – 2026.06</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">Applied Data Science — Early Prediction of Sepsis</div>
-              <div class="tl-meta">Supervisor: Prof. Saptarshi Sinha</div>
+              <div class="tl-title"><span class="lang-en">Applied Data Science — Early Prediction of Sepsis</span><span class="lang-zh">应用数据科学 — 脓毒症早期预测</span></div>
+              <div class="tl-meta"><span class="lang-en">Supervisor: Prof. Saptarshi Sinha</span><span class="lang-zh">导师：Saptarshi Sinha 教授</span></div>
               <div class="tl-body">
-                <ul>
+                <ul class="lang-en">
                   <li>Developed machine-learning solutions for clinical predictive tasks using real-world patient datasets.</li>
                   <li>Performed full-cycle dataset processing: data cleaning, missing-value imputation, feature importance analysis and multi-dimensional data quality assessment.</li>
                   <li>Built reusable automated data processing pipelines; implemented hybrid time-series models including GRU-D + LightGBM and BRITS + LSTM, outperforming baseline clinical scores on held-out test sets.</li>
                   <li>Gained hands-on experience in complex dataset engineering and applying deep-learning techniques to domain-specific challenges.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>基于真实患者数据集，为临床预测任务开发机器学习解决方案。</li>
+                  <li>完成全流程数据集处理：数据清洗、缺失值填补、特征重要性分析及多维度数据质量评估。</li>
+                  <li>构建可复用的自动化数据处理流水线；实现 GRU-D + LightGBM、BRITS + LSTM 等混合时间序列模型，在测试集上优于基线临床评分。</li>
+                  <li>积累了复杂数据集工程与深度学习应用的实战经验。</li>
                 </ul>
               </div>
               <div class="tl-link">
@@ -608,17 +652,23 @@
           </div>
 
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">Sep 2023 – Sep 2024</div>
+            <div class="tl-date"><span class="lang-en">Sep 2023 – Sep 2024</span><span class="lang-zh">2023.09 – 2024.09</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">Software Engineering — Children's Mental Health Website</div>
-              <div class="tl-meta">Supervisor: Prof. Sarah</div>
+              <div class="tl-title"><span class="lang-en">Software Engineering — Children's Mental Health Website</span><span class="lang-zh">软件工程 — 儿童心理健康网站</span></div>
+              <div class="tl-meta"><span class="lang-en">Supervisor: Prof. Sarah</span><span class="lang-zh">导师：Sarah 教授</span></div>
               <div class="tl-body">
-                <ul>
+                <ul class="lang-en">
                   <li>Collaborated to build a web-based resource platform for public-health-related content delivery.</li>
                   <li>Designed MongoDB data schemas and unified data entry standards; managed data models and multi-type content assets.</li>
                   <li>Implemented front-end modules with EJS and JavaScript; constructed backend services based on Node.js and Express.js.</li>
                   <li>Practised end-to-end web development, business-oriented data modelling and structured content management.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>协作构建面向公共卫生内容传播的 Web 资源平台。</li>
+                  <li>设计 MongoDB 数据模式并统一数据录入标准；管理数据模型与多类型内容资产。</li>
+                  <li>使用 EJS 与 JavaScript 实现前端模块；基于 Node.js 与 Express.js 构建后端服务。</li>
+                  <li>实践了端到端 Web 开发、业务导向的数据建模与结构化内容管理。</li>
                 </ul>
               </div>
               <div class="tl-link">
@@ -632,17 +682,23 @@
           </div>
 
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">Sep 2025 – Jun 2026</div>
+            <div class="tl-date"><span class="lang-en">Sep 2025 – Jun 2026</span><span class="lang-zh">2025.09 – 2026.06</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">Team Project — Unity VR Accessibility Simulation</div>
-              <div class="tl-meta">Supervisor: Prof. Sarah</div>
+              <div class="tl-title"><span class="lang-en">Team Project — Unity VR Accessibility Simulation</span><span class="lang-zh">团队项目 — Unity VR 无障碍模拟</span></div>
+              <div class="tl-meta"><span class="lang-en">Supervisor: Prof. Sarah</span><span class="lang-zh">导师：Sarah 教授</span></div>
               <div class="tl-body">
-                <ul>
+                <ul class="lang-en">
                   <li>Developed an immersive VR simulation targeting accessibility-related research scenarios with Unity.</li>
                   <li>Managed heterogeneous assets including 3D scenes, character resources and physiological sensor signals.</li>
                   <li>Deployed LSTM-based time-series model for signal detection, integrated hardware tactile feedback via haptic vest.</li>
                   <li>Built practical engineering capabilities for multi-source heterogeneous-data integration and interactive system development.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>使用 Unity 开发面向无障碍研究场景的沉浸式 VR 模拟。</li>
+                  <li>管理异构资产，包括 3D 场景、角色资源与生理传感器信号。</li>
+                  <li>部署基于 LSTM 的时间序列模型进行信号检测，并通过触觉背心集成硬件反馈。</li>
+                  <li>构建了多源异构数据集成与交互系统开发的工程能力。</li>
                 </ul>
               </div>
               <div class="tl-link">
@@ -656,16 +712,21 @@
           </div>
 
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">Sep 2024 – Jan 2025</div>
+            <div class="tl-date"><span class="lang-en">Sep 2024 – Jan 2025</span><span class="lang-zh">2024.09 – 2025.01</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">Computer Systems — Conway's Game of Life in Go</div>
-              <div class="tl-meta">Supervisor: Prof. Tilo</div>
+              <div class="tl-title"><span class="lang-en">Computer Systems — Conway's Game of Life in Go</span><span class="lang-zh">计算机系统 — Go 语言康威生命游戏</span></div>
+              <div class="tl-meta"><span class="lang-en">Supervisor: Prof. Tilo</span><span class="lang-zh">导师：Tilo 教授</span></div>
               <div class="tl-body">
-                <ul>
+                <ul class="lang-en">
                   <li>Took part in project planning, literature review and formal technical report writing.</li>
                   <li>Implemented cellular-automaton simulation in Go, including unit testing and system-level performance optimisation.</li>
                   <li>Strengthened Go programming, performance tuning, literature survey and academic technical-writing competencies.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>参与项目规划、文献综述与正式技术报告撰写。</li>
+                  <li>使用 Go 实现元胞自动机模拟，包括单元测试与系统级性能优化。</li>
+                  <li>强化了 Go 编程、性能调优、文献调研与学术写作能力。</li>
                 </ul>
               </div>
               <div class="tl-link">
@@ -683,33 +744,33 @@
       <!-- ===== section: patents ===== -->
       <section class="section" id="patents">
         <div class="section-head">
-          <h2>Patents</h2>
-          <span class="en">Granted Utility Models</span>
+          <h2><span class="lang-en">Patents</span><span class="lang-zh">专利成果</span></h2>
+          <span class="en lang-en">Granted Utility Models</span><span class="en lang-zh">已授权实用新型</span>
         </div>
         <div class="patent-list">
           <div class="patent-item">
-            <div class="patent-title">Medical Radiation Protection Screen</div>
+            <div class="patent-title"><span class="lang-en">Medical Radiation Protection Screen</span><span class="lang-zh">医用射线防护屏</span></div>
             <div class="patent-meta">
-              Patent No. ZL202421476455.6 | Granted 2024<br />
-              Inventors: C. Yan (1st), X. Huang (2nd). Contribution: Led mechanical-structure design for medical radiological shielding hardware.
+              <span class="lang-en">Patent No. ZL202421476455.6 | Granted 2024<br />Inventors: C. Yan (1st), X. Huang (2nd). Contribution: Led mechanical-structure design for medical radiological shielding hardware.</span>
+              <span class="lang-zh">专利号 ZL202421476455.6 | 2024 年授权<br />发明人：C. Yan（第 1 位）、X. Huang（第 2 位）。贡献：主导医用放射屏蔽硬件的机械结构设计。</span>
             </div>
-            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-medical-radiation-shield.pdf">View Patent Certificate</a>
+            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-medical-radiation-shield.pdf"><span class="lang-en">View Patent Certificate</span><span class="lang-zh">查看专利证书</span></a>
           </div>
           <div class="patent-item">
-            <div class="patent-title">Automatic Radiation Protection Screen</div>
+            <div class="patent-title"><span class="lang-en">Automatic Radiation Protection Screen</span><span class="lang-zh">自动射线防护屏</span></div>
             <div class="patent-meta">
-              Patent No. ZL202120693771.9 | Granted 2021<br />
-              Inventors: Y. Yang (1st), C. Yan (2nd), J. He (3rd). Contribution: Contributed to mechanical-structure and automatic-control design for radiology-protection equipment.
+              <span class="lang-en">Patent No. ZL202120693771.9 | Granted 2021<br />Inventors: Y. Yang (1st), C. Yan (2nd), J. He (3rd). Contribution: Contributed to mechanical-structure and automatic-control design for radiology-protection equipment.</span>
+              <span class="lang-zh">专利号 ZL202120693771.9 | 2021 年授权<br />发明人：Y. Yang（第 1 位）、C. Yan（第 2 位）、J. He（第 3 位）。贡献：参与放射防护设备的机械结构与自动控制设计。</span>
             </div>
-            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-automatic-radiation-shield.pdf">View Patent Certificate</a>
+            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-automatic-radiation-shield.pdf"><span class="lang-en">View Patent Certificate</span><span class="lang-zh">查看专利证书</span></a>
           </div>
           <div class="patent-item">
-            <div class="patent-title">Electromagnetic Relay-Based Switching Control Circuit and Medical X-ray Protection Device</div>
+            <div class="patent-title"><span class="lang-en">Electromagnetic Relay-Based Switching Control Circuit and Medical X-ray Protection Device</span><span class="lang-zh">基于电磁继电器的开关控制电路及医用 X 射线防护装置</span></div>
             <div class="patent-meta">
-              Patent No. ZL202420775618.4 | Granted 2024<br />
-              Inventors: D. Qin (1st), X. Huang (2nd), C. Yan (3rd). Contribution: Participated in control-circuit logic design for medical X-ray protective devices.
+              <span class="lang-en">Patent No. ZL202420775618.4 | Granted 2024<br />Inventors: D. Qin (1st), X. Huang (2nd), C. Yan (3rd). Contribution: Participated in control-circuit logic design for medical X-ray protective devices.</span>
+              <span class="lang-zh">专利号 ZL202420775618.4 | 2024 年授权<br />发明人：D. Qin（第 1 位）、X. Huang（第 2 位）、C. Yan（第 3 位）。贡献：参与医用 X 射线防护装置的控制电路逻辑设计。</span>
             </div>
-            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-xray-protection-circuit.pdf">View Patent Certificate</a>
+            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-xray-protection-circuit.pdf"><span class="lang-en">View Patent Certificate</span><span class="lang-zh">查看专利证书</span></a>
           </div>
         </div>
       </section>
@@ -717,21 +778,27 @@
       <!-- ===== section: internship ===== -->
       <section class="section" id="internship">
         <div class="section-head">
-          <h2>Internship</h2>
-          <span class="en">Industry</span>
+          <h2><span class="lang-en">Internship</span><span class="lang-zh">实习经历</span></h2>
+          <span class="en lang-en">Industry</span><span class="en lang-zh">业界实践</span>
         </div>
         <div class="timeline">
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date">DingTalk Ecosystem</div>
+            <div class="tl-date"><span class="lang-en">DingTalk Ecosystem</span><span class="lang-zh">钉钉开放生态</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title">Ruitai Imaging Technology (Shenzhen) Co., Ltd. — Full-stack Development Intern</div>
+              <div class="tl-title"><span class="lang-en">Ruitai Imaging Technology (Shenzhen) Co., Ltd. — Full-stack Development Intern</span><span class="lang-zh">深圳锐泰影像技术有限公司 — 全栈开发实习生</span></div>
               <div class="tl-body">
-                <ul>
+                <ul class="lang-en">
                   <li>Conducted end-to-end requirement analysis, database schema design and full-stack application development.</li>
                   <li>Implemented procurement, warehousing and inventory-control modules leveraging DingTalk API with Node.js, MongoDB and JavaScript.</li>
                   <li>Replaced offline manual ledger workflows; boosted warehouse inbound-outbound efficiency by <strong>40%</strong> and reduced manual-input errors, enabling unified visualised business-data management.</li>
                   <li>Accumulated practical experience building enterprise-grade data-centric systems and database optimisation for medical-related informatics research.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>完成端到端需求分析、数据库模式设计与全栈应用开发。</li>
+                  <li>基于钉钉开放平台 API，使用 Node.js、MongoDB 与 JavaScript 实现采购、仓储与库存控制模块。</li>
+                  <li>取代线下手工台账流程，将仓库进出库效率提升<strong>40%</strong>并减少人工录入错误，实现统一可视化的业务数据管理。</li>
+                  <li>积累了企业级数据驱动系统构建与数据库优化的实践经验，服务于医疗信息学研究。</li>
                 </ul>
               </div>
             </div>
@@ -742,22 +809,22 @@
       <!-- ===== section: skills ===== -->
       <section class="section" id="skills">
         <div class="section-head">
-          <h2>Skills</h2>
-          <span class="en">Toolkit</span>
+          <h2><span class="lang-en">Skills</span><span class="lang-zh">技能</span></h2>
+          <span class="en lang-en">Toolkit</span><span class="en lang-zh">技能清单</span>
         </div>
         <div class="skill-group">
-          <div class="skill-label">AI &amp; Machine Learning</div>
+          <div class="skill-label"><span class="lang-en">AI &amp; Machine Learning</span><span class="lang-zh">人工智能与机器学习</span></div>
           <div class="skill-tags">
             <span class="tag tag-proficient">TensorFlow</span>
             <span class="tag tag-skilled">Scikit-learn</span>
             <span class="tag tag-skilled">LightGBM</span>
             <span class="tag tag-familiar">GRU / LSTM / BRITS</span>
-            <span class="tag tag-familiar">Feature Engineering</span>
-            <span class="tag tag-familiar">Data Pipeline</span>
+            <span class="tag tag-familiar"><span class="lang-en">Feature Engineering</span><span class="lang-zh">特征工程</span></span>
+            <span class="tag tag-familiar"><span class="lang-en">Data Pipeline</span><span class="lang-zh">数据流水线</span></span>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-label">Programming Languages</div>
+          <div class="skill-label"><span class="lang-en">Programming Languages</span><span class="lang-zh">编程语言</span></div>
           <div class="skill-tags">
             <span class="tag tag-proficient">Python</span>
             <span class="tag tag-proficient">Go</span>
@@ -769,34 +836,41 @@
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-label">Database, Systems &amp; Tools</div>
+          <div class="skill-label"><span class="lang-en">Database, Systems &amp; Tools</span><span class="lang-zh">数据库、系统与工具</span></div>
           <div class="skill-tags">
             <span class="tag tag-skilled">MongoDB</span>
             <span class="tag tag-skilled">Express.js</span>
             <span class="tag tag-skilled">Git / GitLab</span>
             <span class="tag tag-skilled">Linux</span>
-            <span class="tag tag-familiar">Unity VR</span>
+            <span class="tag tag-familiar"><span class="lang-en">Unity VR</span><span class="lang-zh">Unity VR</span></span>
             <span class="tag tag-familiar">Matplotlib</span>
             <span class="tag tag-familiar">Seaborn</span>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-label">Research &amp; Soft Skills</div>
+          <div class="skill-label"><span class="lang-en">Research &amp; Soft Skills</span><span class="lang-zh">研究与软技能</span></div>
           <div class="skill-tags">
-            <span class="tag tag-skilled">Academic Writing</span>
-            <span class="tag tag-skilled">Experimental Design</span>
-            <span class="tag tag-skilled">Dataset Processing</span>
-            <span class="tag tag-skilled">Group Collaboration</span>
+            <span class="tag tag-skilled"><span class="lang-en">Academic Writing</span><span class="lang-zh">学术写作</span></span>
+            <span class="tag tag-skilled"><span class="lang-en">Experimental Design</span><span class="lang-zh">实验设计</span></span>
+            <span class="tag tag-skilled"><span class="lang-en">Dataset Processing</span><span class="lang-zh">数据集处理</span></span>
+            <span class="tag tag-skilled"><span class="lang-en">Group Collaboration</span><span class="lang-zh">团队协作</span></span>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-label">Language Proficiency</div>
+          <div class="skill-label"><span class="lang-en">Language Proficiency</span><span class="lang-zh">语言能力</span></div>
           <div class="skill-tags">
-            <span class="tag tag-proficient">Mandarin (Native)</span>
-            <span class="tag tag-skilled">English (Academic reading &amp; writing)</span>
+            <span class="tag tag-proficient"><span class="lang-en">Mandarin (Native)</span><span class="lang-zh">普通话（母语）</span></span>
+            <span class="tag tag-skilled"><span class="lang-en">English (Academic reading &amp; writing)</span><span class="lang-zh">英语（学术读写）</span></span>
           </div>
         </div>
       </section>
+
+      <!-- ===== footer ===== -->
+      <footer>
+        <span class="lang-en">&copy; 2026 CHENGZHI YAN</span>
+        <span class="lang-zh">&copy; 2026 鄢承志</span>
+      </footer>
+    </main>
 
     <button id="backTop" aria-label="Back to top">↑</button>
 
@@ -860,7 +934,23 @@
         const current = document.documentElement.getAttribute("data-theme");
         setTheme(current === "dark" ? "light" : "dark");
       });
+
+      const langToggle = document.getElementById("langToggle");
+      function setLang(lang) {
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+        document.title = lang === "zh"
+          ? "鄢承志 · 医疗人工智能研究者"
+          : "CHENGZHI YAN · AI for Healthcare Researcher";
+        try { localStorage.setItem("lang", lang); } catch (e) {}
+      }
+      let savedLang = "en";
+      try { savedLang = localStorage.getItem("lang") || "en"; } catch (e) {}
+      setLang(savedLang);
+      langToggle.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-lang");
+        setLang(current === "zh" ? "en" : "zh");
+      });
     </script>
   </body>
 </html>
-<!-- （注：内容由AI生成） -->
