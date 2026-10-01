@@ -3,163 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chengzhi Yan | AI for Healthcare Researcher</title>
+    <title>CHENGZHI YAN · AI for Healthcare Researcher</title>
     <meta name="description" content="Chengzhi Yan — M.Sc. candidate in Computer Science at University of Bristol, focusing on AI for healthcare, multimodal medical imaging, and clinical decision support." />
     <meta name="keywords" content="Chengzhi Yan, Computer Science, University of Bristol, AI, Healthcare, Multimodal AI, Medical Imaging, Machine Learning" />
-    <meta property="og:title" content="Chengzhi Yan | AI for Healthcare Researcher" />
+    <meta property="og:title" content="CHENGZHI YAN | AI for Healthcare Researcher" />
     <meta property="og:description" content="M.Sc. candidate in Computer Science at University of Bristol, focusing on AI for healthcare and multimodal medical imaging." />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a56db'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial'%3EY%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a4fd6'/%3E%3Ctext x='50' y='70' font-size='54' font-weight='bold' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EY%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
       :root {
-        --primary: #1a4fd6;
-        --primary-light: #3b6ef5;
-        --primary-bg: #eaf0ff;
-        --primary-deep: #1540a8;
-        --text-primary: #0f172a;
-        --text-secondary: #334155;
-        --text-tertiary: #64748b;
-        --bg-page: #f6f8fc;
-        --bg-card: #ffffff;
-        --bg-elevated: #ffffff;
-        --border-subtle: #e2e8f0;
-        --shadow-card:
-          0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.05);
-        --shadow-card-hover:
-          0 6px 16px rgba(26, 79, 214, 0.1), 0 16px 36px rgba(15, 23, 42, 0.08);
-        --hero-gradient: linear-gradient(135deg, #1540a8 0%, #1a4fd6 50%, #2f6be6 100%);
-        --tag-bg-familiar: #f1f5f9;
+        --bg: #f5f7fb;
+        --surface: #ffffff;
+        --text: #121a2e;
+        --text-2: #3b4663;
+        --text-3: #67718c;
+        --line: #e3e8f1;
+        --accent: #1a4fd6;
+        --accent-deep: #143aa8;
+        --accent-soft: #e9efff;
+        --shadow: 0 1px 2px rgba(15, 26, 46, 0.04), 0 12px 32px rgba(15, 26, 46, 0.06);
+        --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+        --font-body: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
       }
       [data-theme="dark"] {
-        --primary: #6b9aff;
-        --primary-light: #8ab4ff;
-        --primary-bg: rgba(107, 154, 255, 0.12);
-        --primary-deep: #4a7fe8;
-        --text-primary: #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-tertiary: #94a3b8;
-        --bg-page: #0b1120;
-        --bg-card: #131c2f;
-        --bg-elevated: #1a2540;
-        --border-subtle: #2a3a5c;
-        --shadow-card:
-          0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.15);
-        --shadow-card-hover:
-          0 6px 16px rgba(0, 0, 0, 0.25), 0 16px 36px rgba(0, 0, 0, 0.2);
-        --hero-gradient: linear-gradient(135deg, #0f2b6e 0%, #1a3f9e 50%, #2558c4 100%);
-        --tag-bg-familiar: #1e2a45;
+        --bg: #0a101d;
+        --surface: #111a2e;
+        --text: #edf1f8;
+        --text-2: #c2cde0;
+        --text-3: #8a95ad;
+        --line: #24304a;
+        --accent: #7fa3ff;
+        --accent-deep: #9db8ff;
+        --accent-soft: #16213c;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.25);
       }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
       body {
-        font-family:
-          "Segoe UI", "Helvetica Neue", Calibri, "PingFang SC", sans-serif;
-        background: var(--bg-page);
-        color: var(--text-primary);
-        line-height: 1.75;
-        letter-spacing: 0.01em;
+        font-family: var(--font-body);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        letter-spacing: 0.005em;
         transition: background 0.3s ease, color 0.3s ease;
+        -webkit-font-smoothing: antialiased;
       }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* ---------- nav ---------- */
       nav {
         position: sticky;
         top: 0;
         z-index: 999;
-        background: rgba(255, 255, 255, 0.82);
+        background: color-mix(in srgb, var(--bg) 82%, transparent);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-        transition: all 0.3s ease, background 0.3s ease;
-      }
-      [data-theme="dark"] nav {
-        background: rgba(11, 17, 32, 0.82);
-        border-bottom-color: rgba(42, 58, 92, 0.7);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
       }
       nav.scrolled {
-        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.07);
-        border-bottom-color: transparent;
+        border-bottom-color: var(--line);
+        box-shadow: 0 4px 20px rgba(15, 26, 46, 0.05);
       }
       .nav-inner {
-        max-width: 1000px;
+        position: relative;
+        max-width: 1080px;
         margin: 0 auto;
-        padding: 14px 28px;
+        padding: 14px 32px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
       }
       .nav-logo {
-        font-size: 1.2rem;
+        font-family: var(--font-display);
+        font-size: 1.18rem;
         font-weight: 700;
-        color: var(--primary);
+        color: var(--text);
+        letter-spacing: 0.04em;
         white-space: nowrap;
-        letter-spacing: 0.02em;
-        display: flex;
-        align-items: center;
-        gap: 10px;
       }
+      .nav-logo span { color: var(--accent); }
       .nav-menu {
         display: flex;
-        gap: 26px;
         align-items: center;
+        gap: 6px;
       }
       .nav-menu a {
         position: relative;
-        color: var(--text-secondary);
-        text-decoration: none;
-        font-size: 0.94rem;
+        color: var(--text-2);
+        font-size: 0.92rem;
+        font-weight: 500;
+        padding: 6px 10px;
+        border-radius: 6px;
         white-space: nowrap;
-        padding: 6px 0;
-        transition: color 0.2s ease;
+        transition: color 0.2s ease, background 0.2s ease;
       }
-      .nav-menu a::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        border-radius: 1px;
-        transition: width 0.25s ease;
-      }
-      .nav-menu a:hover {
-        color: var(--primary);
-      }
-      .nav-menu a:hover::after {
-        width: 100%;
-      }
-      .nav-menu a.active {
-        color: var(--primary);
-        font-weight: 600;
-      }
-      .nav-menu a.active::after {
-        width: 100%;
-      }
+      .nav-menu a:hover { color: var(--text); background: var(--accent-soft); text-decoration: none; }
+      .nav-menu a.active { color: var(--accent); background: var(--accent-soft); }
+      .nav-tools { display: flex; align-items: center; gap: 4px; }
       .theme-toggle {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
-        border: 1px solid var(--border-subtle);
-        background: var(--bg-card);
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--text-2);
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 16px;
         transition: all 0.2s ease;
         flex-shrink: 0;
       }
-      .theme-toggle:hover {
-        border-color: var(--primary);
-        color: var(--primary);
-      }
+      .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
       .hamburger {
         display: none;
         flex-direction: column;
@@ -174,409 +133,350 @@
         justify-content: center;
       }
       .hamburger span {
-        width: 22px;
+        width: 20px;
         height: 2px;
-        background: var(--text-primary);
+        background: var(--text-2);
         border-radius: 2px;
         transition: all 0.3s ease;
       }
-      .hamburger.open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      .hamburger.open span:nth-child(2) {
-        opacity: 0;
-      }
-      .hamburger.open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 36px 28px 80px;
-      }
+      .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* ---------- hero ---------- */
       .hero {
-        background: var(--hero-gradient);
-        color: #fff;
-        border-radius: 16px;
-        padding: 52px 48px;
-        box-shadow: var(--shadow-card);
-        margin-bottom: 28px;
         position: relative;
+        background:
+          radial-gradient(1100px 480px at 88% -10%, rgba(59, 110, 245, 0.16), transparent 60%),
+          linear-gradient(135deg, #101d3d 0%, #16285a 52%, #1d3a7d 100%);
+        color: #f2f5fc;
         overflow: hidden;
+      }
+      [data-theme="dark"] .hero {
+        background:
+          radial-gradient(1100px 480px at 88% -10%, rgba(90, 130, 240, 0.18), transparent 60%),
+          linear-gradient(135deg, #0b1326 0%, #101f42 52%, #16295a 100%);
       }
       .hero::before {
         content: "";
         position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-        border-radius: 50%;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.25));
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.25));
+        pointer-events: none;
       }
-      .hero-content {
+      .hero-inner {
         position: relative;
-        z-index: 1;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 88px 32px 76px;
       }
       .hero h1 {
-        font-size: 2.5rem;
+        font-family: var(--font-display);
+        font-size: clamp(2.4rem, 5.4vw, 4.1rem);
         font-weight: 700;
-        letter-spacing: 0.03em;
-        margin-bottom: 10px;
+        line-height: 1.08;
+        letter-spacing: 0.015em;
+        margin-bottom: 18px;
+        text-wrap: balance;
+        animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
       .hero-tagline {
-        font-size: 1.08rem;
-        opacity: 0.95;
-        margin-bottom: 18px;
+        font-size: clamp(1.02rem, 2vw, 1.2rem);
+        color: #d5ddef;
         font-weight: 500;
+        margin-bottom: 14px;
+        max-width: 30em;
+        animation: heroIn 0.7s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
       .hero-contact {
-        font-size: 0.96rem;
-        opacity: 0.9;
-        line-height: 1.6;
-        margin-bottom: 22px;
+        font-size: 0.98rem;
+        color: #aab6d6;
+        margin-bottom: 30px;
+        animation: heroIn 0.7s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
+      .hero-contact a { color: #cfd9f2; }
       .hero-links {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
         align-items: center;
+        animation: heroIn 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
       .hero-btn {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 9px 18px;
+        padding: 10px 20px;
         border-radius: 8px;
         font-size: 0.92rem;
-        text-decoration: none;
+        font-weight: 600;
         transition: all 0.2s ease;
-        font-weight: 500;
       }
+      .hero-btn svg { width: 15px; height: 15px; }
       .hero-btn-primary {
-        background: #fff;
-        color: var(--primary-deep);
+        background: #ffffff;
+        color: var(--accent-deep);
       }
-      .hero-btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      }
+      .hero-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22); text-decoration: none; }
       .hero-btn-ghost {
-        background: rgba(255, 255, 255, 0.15);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #eef1fa;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.06);
       }
-      .hero-btn-ghost:hover {
-        background: rgba(255, 255, 255, 0.25);
+      .hero-btn-ghost:hover { background: rgba(255, 255, 255, 0.14); transform: translateY(-1px); text-decoration: none; }
+      @keyframes heroIn {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-      .hero-btn svg {
-        width: 16px;
-        height: 16px;
+
+      /* ---------- layout ---------- */
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 56px 32px 64px;
       }
-      .card {
-        background: var(--bg-card);
-        border-radius: 14px;
-        padding: 32px 36px;
-        box-shadow: var(--shadow-card);
-        margin-bottom: 22px;
-        scroll-margin-top: 80px;
-        transition: all 0.25s ease, background 0.3s ease;
-        border: 1px solid transparent;
+      .section {
+        margin-bottom: 64px;
+        scroll-margin-top: 84px;
       }
-      .card:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-card-hover);
-        border-color: rgba(59, 110, 245, 0.15);
-      }
-      .section-title {
-        font-size: 1.45rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: 22px;
+      .section:last-of-type { margin-bottom: 0; }
+      .section-head {
         display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .section-title::before {
-        content: "";
-        width: 5px;
-        height: 24px;
-        background: var(--primary);
-        border-radius: 3px;
-      }
-      .item {
-        margin-bottom: 28px;
-        padding-left: 16px;
-        border-left: 2px solid var(--border-subtle);
-      }
-      .item:last-child {
-        margin-bottom: 0;
-      }
-      .item-header {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 20px;
         align-items: baseline;
-        margin-bottom: 6px;
+        gap: 18px;
+        margin-bottom: 30px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
       }
-      .item-title {
+      .section-head h2 {
+        font-family: var(--font-display);
+        font-size: 1.55rem;
         font-weight: 600;
-        font-size: 1.06rem;
-        color: var(--text-primary);
+        letter-spacing: 0.01em;
+        color: var(--text);
       }
-      .item-date {
-        color: var(--text-tertiary);
-        font-size: 0.92rem;
-        white-space: nowrap;
+      .section-head .en {
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-3);
+      }
+      .lead {
+        color: var(--text-2);
+        font-size: 1.0rem;
+        max-width: 52em;
+      }
+      .lead p + p { margin-top: 14px; }
+      .lead strong { color: var(--text); font-weight: 600; }
+      .lead em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+      /* ---------- timeline ---------- */
+      .timeline {
+        display: grid;
+        grid-template-columns: 132px 34px 1fr;
+        gap: 0;
+      }
+      .tl-date {
         text-align: right;
-      }
-      .item-supervisor {
+        padding: 2px 0 0 0;
+        color: var(--text-3);
         font-size: 0.92rem;
-        color: var(--text-tertiary);
-        margin-bottom: 8px;
+        font-weight: 500;
+        line-height: 1.5;
       }
-      .item ul {
-        padding-left: 24px;
-        margin-top: 6px;
-        margin-bottom: 8px;
+      .tl-axis {
+        position: relative;
+        display: flex;
+        justify-content: center;
       }
-      .item li {
-        margin-bottom: 7px;
-        color: var(--text-secondary);
-        line-height: 1.7;
-        font-size: 0.96rem;
+      .tl-axis::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        bottom: -6px;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, var(--accent) 0%, var(--line) 70%);
       }
-      .item-link {
-        font-size: 0.92rem;
+      .timeline .tl-item:last-child .tl-axis::before { bottom: auto; height: 6px; }
+      .tl-dot {
+        position: relative;
+        top: 7px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--surface);
+        border: 2.5px solid var(--accent);
+        justify-self: center;
+        flex-shrink: 0;
       }
-      .item-link a {
-        color: var(--primary);
-        text-decoration: none;
+      .tl-content {
+        padding: 0 0 40px 8px;
       }
-      .item-link a:hover {
-        text-decoration: underline;
-      }
-      .ext-icon {
-        display: inline-block;
-        width: 11px;
-        height: 11px;
-        margin-left: 3px;
-        vertical-align: middle;
-        opacity: 0.6;
-      }
-      .highlight-metric {
-        color: var(--primary);
+      .tl-item:last-child .tl-content { padding-bottom: 0; }
+      .tl-title {
+        font-size: 1.06rem;
         font-weight: 600;
+        color: var(--text);
+        margin-bottom: 3px;
       }
+      .tl-meta {
+        font-size: 0.9rem;
+        color: var(--text-3);
+        margin-bottom: 10px;
+      }
+      .tl-body { color: var(--text-2); font-size: 0.96rem; }
+      .tl-body p { margin-bottom: 8px; }
+      .tl-body ul { padding-left: 20px; margin: 6px 0 8px; }
+      .tl-body li { margin-bottom: 7px; line-height: 1.65; }
+      .tl-link { font-size: 0.92rem; margin-top: 8px; }
+      .ext-icon { display: inline-block; width: 11px; height: 11px; margin-left: 3px; vertical-align: middle; opacity: 0.55; }
+
+      /* ---------- patents ---------- */
+      .patent-list { display: grid; gap: 14px; }
       .patent-item {
-        margin-bottom: 14px;
-        padding: 14px 18px;
-        background: var(--bg-page);
+        border: 1px solid var(--line);
         border-radius: 10px;
-        border-left: 3px solid var(--primary-light);
-        transition: all 0.2s ease;
+        background: var(--surface);
+        padding: 18px 22px;
+        transition: border-color 0.2s ease, transform 0.2s ease;
       }
-      .patent-item:last-child {
-        margin-bottom: 0;
-      }
-      .patent-item:hover {
-        background: var(--primary-bg);
-      }
-      .patent-title {
-        font-weight: 600;
-        margin-bottom: 4px;
-        color: var(--text-primary);
-      }
-      .patent-meta {
-        font-size: 0.92rem;
-        color: var(--text-secondary);
-        line-height: 1.7;
-      }
+      .patent-item:hover { border-color: var(--accent); transform: translateY(-1px); }
+      .patent-title { font-weight: 600; font-size: 1.0rem; margin-bottom: 5px; color: var(--text); }
+      .patent-meta { font-size: 0.9rem; color: var(--text-2); line-height: 1.65; }
       .patent-cert-btn {
         display: inline-block;
-        margin-top: 8px;
+        margin-top: 10px;
         padding: 5px 14px;
-        background: var(--primary-bg);
-        color: var(--primary);
+        background: var(--accent-soft);
+        color: var(--accent);
         border-radius: 6px;
         font-size: 0.88rem;
-        text-decoration: none;
+        font-weight: 500;
         transition: all 0.2s ease;
       }
-      .patent-cert-btn:hover {
-        background: var(--primary);
-        color: #fff;
-      }
-      .skill-group {
-        margin-bottom: 16px;
-      }
-      .skill-group:last-child {
-        margin-bottom: 0;
-      }
+      .patent-cert-btn:hover { background: var(--accent); color: #fff; text-decoration: none; }
+
+      /* ---------- skills ---------- */
+      .skill-group { margin-bottom: 22px; }
+      .skill-group:last-child { margin-bottom: 0; }
       .skill-label {
         font-weight: 600;
-        color: var(--text-primary);
+        color: var(--text-3);
+        font-size: 0.82rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
         margin-bottom: 10px;
-        font-size: 1rem;
       }
-      .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
+      .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
       .tag {
         padding: 5px 14px;
-        border-radius: 20px;
+        border-radius: 999px;
         font-size: 0.9rem;
         line-height: 1.5;
         transition: all 0.2s ease;
+        border: 1px solid transparent;
       }
-      .tag-proficient {
-        background: var(--primary);
-        color: #fff;
-      }
-      .tag-skilled {
-        background: var(--primary-bg);
-        color: var(--primary);
-      }
-      .tag-familiar {
-        background: var(--tag-bg-familiar);
-        color: var(--text-secondary);
-        border: 1px solid var(--border-subtle);
-      }
-      .tag:hover {
-        transform: translateY(-1px);
-      }
+      .tag-proficient { background: var(--accent); color: #fff; }
+      .tag-skilled { background: var(--accent-soft); color: var(--accent); }
+      .tag-familiar { background: transparent; color: var(--text-2); border-color: var(--line); }
+      .tag:hover { transform: translateY(-1px); }
+
+      /* ---------- footer ---------- */
       footer {
         text-align: center;
         font-size: 0.88rem;
-        color: var(--text-tertiary);
-        margin-top: 48px;
+        color: var(--text-3);
+        padding: 36px 20px 46px;
+        border-top: 1px solid var(--line);
+        background: var(--surface);
       }
+
       #backTop {
         position: fixed;
-        bottom: 32px;
-        right: 32px;
-        width: 46px;
-        height: 46px;
+        bottom: 30px;
+        right: 30px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
-        background: var(--primary);
+        background: var(--accent);
         color: #fff;
         border: none;
-        font-size: 18px;
+        font-family: var(--font-body);
+        font-size: 16px;
         cursor: pointer;
-        box-shadow: 0 4px 14px rgba(26, 79, 214, 0.3);
+        box-shadow: 0 6px 18px rgba(26, 79, 214, 0.3);
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
         z-index: 99;
       }
-      #backTop.show {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      #backTop:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(26, 79, 214, 0.35);
-      }
-      @media (max-width: 768px) {
-        .nav-inner {
-          padding: 12px 20px;
-        }
-        .hamburger {
-          display: flex;
-        }
+      #backTop.show { opacity: 1; pointer-events: auto; }
+      #backTop:hover { transform: translateY(-3px); }
+
+      :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 860px) {
+        .nav-inner { padding: 12px 20px; }
+        .hamburger { display: flex; }
         .nav-menu {
           position: absolute;
           top: 100%;
           left: 0;
           right: 0;
-          background: var(--bg-card);
+          background: var(--surface);
           flex-direction: column;
-          gap: 0;
-          padding: 12px 0;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-          transform: translateY(-10px);
+          gap: 2px;
+          padding: 12px 16px 18px;
+          box-shadow: 0 14px 32px rgba(15, 26, 46, 0.12);
+          border-bottom: 1px solid var(--line);
+          transform: translateY(-8px);
           opacity: 0;
           pointer-events: none;
           transition: all 0.25s ease;
-          border-bottom: 1px solid var(--border-subtle);
         }
-        .nav-menu.open {
-          transform: translateY(0);
-          opacity: 1;
-          pointer-events: auto;
-        }
-        .nav-menu a {
-          padding: 12px 28px;
-          width: 100%;
-        }
-        .nav-menu a::after {
-          display: none;
-        }
-        .container {
-          padding: 24px 18px 60px;
-        }
-        .hero {
-          padding: 36px 26px;
-        }
-        .hero h1 {
-          font-size: 1.9rem;
-        }
-        .hero-tagline {
-          font-size: 0.98rem;
-        }
-        .card {
-          padding: 24px 22px;
-        }
-        .item-header {
-          grid-template-columns: 1fr;
-          gap: 4px;
-        }
-        .item-date {
-          text-align: left;
-        }
-        .hero-links {
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .hero-btn {
-          justify-content: center;
-        }
+        .nav-menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; visibility: visible; }
+        .nav-menu { visibility: hidden; }
+        .nav-menu a { padding: 10px 14px; width: 100%; font-size: 1rem; }
+        .hero-inner { padding: 64px 20px 56px; }
+        .container { padding: 44px 20px 52px; }
+        .timeline { grid-template-columns: 1fr; }
+        .tl-date { text-align: left; padding-bottom: 4px; }
+        .tl-axis { display: none; }
+        .tl-content { padding: 0 0 36px 0; }
+        .patent-cert-btn { min-height: 44px; display: inline-flex; align-items: center; }
+        .section { margin-bottom: 52px; }
       }
+      @media (max-width: 480px) {
+        .section-head { flex-direction: column; gap: 2px; }
+        .hero h1 { font-size: 2.1rem; }
+      }
+
+      /* ---------- print ---------- */
       @media print {
-        nav, #backTop, .theme-toggle, .hamburger {
-          display: none !important;
-        }
-        body {
-          background: #fff !important;
-          color: #000 !important;
-        }
-        .hero {
-          background: #1a4fd6 !important;
-          color: #fff !important;
-          box-shadow: none !important;
-          break-inside: avoid;
-        }
-        .card {
-          box-shadow: none !important;
-          border: 1px solid #ddd !important;
-          margin-bottom: 12px;
-          break-inside: avoid;
-        }
-        .hero-btn {
-          border: 1px solid #fff !important;
-        }
+        nav, #backTop, .theme-toggle, .hamburger { display: none !important; }
+        body { background: #fff !important; color: #000 !important; }
+        .hero { background: #16285a !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .hero::before { display: none; }
+        .section-head { border-bottom: 1px solid #bbb; }
+        .patent-item { border: 1px solid #ccc; }
+        .tag-proficient, .tag-skilled { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .tl-axis::before { background: #bbb; }
       }
     </style>
   </head>
   <body>
     <nav id="navbar">
       <div class="nav-inner">
-        <div class="nav-logo">CHENGZHI YAN</div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+        <div class="nav-logo">CHENGZHI<span>·</span>YAN</div>
         <div class="nav-menu" id="navMenu">
           <a href="#interests" data-target="interests">Interests</a>
           <a href="#prospective-research" data-target="prospective-research">PhD Research</a>
@@ -585,307 +485,266 @@
           <a href="#patents" data-target="patents">Patents</a>
           <a href="#internship" data-target="internship">Internship</a>
           <a href="#skills" data-target="skills">Skills</a>
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
+          <div class="nav-tools">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+              <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </div>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
-    <div class="container">
-      <div class="hero">
-        <div class="hero-content">
-          <h1>CHENGZHI YAN</h1>
-          <div class="hero-tagline">
-            M.Sc. Candidate in Computer Science | AI for Healthcare &amp; Multimodal Medical Imaging
-          </div>
-          <div class="hero-contact">
-            Shenzhen, Guangdong, China &nbsp;|&nbsp; 1193387075@qq.com
-          </div>
-          <div class="hero-links">
-            <a href="Chengzhi-Yan-CV.pdf" download class="hero-btn hero-btn-primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download CV
-            </a>
-            <a href="mailto:1193387075@qq.com" class="hero-btn hero-btn-ghost">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Email
-            </a>
-            <a href="https://github.com/JacksonYan1" target="_blank" rel="noopener" class="hero-btn hero-btn-ghost">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.417-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.423.366.823 1.096.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
-            </a>
-            <a href="https://JacksonYan1.github.io" target="_blank" rel="noopener" class="hero-btn hero-btn-ghost">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              Personal Site
-            </a>
-          </div>
+    <header class="hero">
+      <div class="hero-inner">
+        <h1>CHENGZHI YAN</h1>
+        <p class="hero-tagline">M.Sc. Candidate in Computer Science&nbsp;|&nbsp;AI for Healthcare &amp; Multimodal Medical Imaging</p>
+        <p class="hero-contact">Shenzhen, Guangdong, China &nbsp;|&nbsp; <a href="mailto:1193387075@qq.com">1193387075@qq.com</a></p>
+        <div class="hero-links">
+          <a href="Chengzhi-Yan-CV.pdf" download class="hero-btn hero-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <a href="mailto:1193387075@qq.com" class="hero-btn hero-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+          <a href="https://github.com/JacksonYan1" target="_blank" rel="noopener" class="hero-btn hero-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.417-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.423.366.823 1.096.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
         </div>
       </div>
+    </header>
 
-      <div class="card" id="interests">
-        <h2 class="section-title">Research Interests</h2>
-        <p style="color: var(--text-secondary); font-size: 0.98rem;">
-          Artificial intelligence and machine-learning applications, with an
-          emphasis on healthcare-related computing. Interested in data
-          processing &amp; engineering, time-series modelling, multi-source data
-          integration, software system construction and AI-driven clinical
-          auxiliary solutions.
-        </p>
-      </div>
-
-      <div class="card" id="prospective-research">
-        <h2 class="section-title">Prospective Doctoral Research Focus</h2>
-        <p style="color: var(--text-secondary); font-size: 0.98rem;">
-          My doctoral research centres on <strong>multimodal AI fusion for intelligent quality verification of radiological diagnosis</strong>. By integrating medical imaging, diagnostic report text and patient clinical data, it aims to accurately identify missed diagnosis, misdiagnosis and inconsistent diagnostic logic.
-        </p>
-        <p style="color: var(--text-secondary); margin-top: 12px; font-size: 0.98rem;">
-          Built on my proven experience in clinical time-series modelling, medical image AI evaluation, full-stack medical informatics development and patented medical radiation device design, this work addresses the key limitation of current single-modal medical AI, evolving from passive lesion recognition to active cross-modal diagnostic logic supervision.
-        </p>
-      </div>
-
-      <div class="card" id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              <strong>M.Sc. in Computer Science</strong>, University of Bristol, UK
-            </div>
-            <div class="item-date">Sep. 2026 – Jun. 2027 (Expected)</div>
-          </div>
-          <p style="color: var(--text-secondary); font-size: 0.94rem;">
-            Relevant Courses: Deep Learning, Sustainable Computing, Advanced
-            Topics in Computer Science, Individual Research Project
+    <main class="container">
+      <!-- ===== section: interests ===== -->
+      <section class="section" id="interests">
+        <div class="section-head">
+          <h2>Research Interests</h2>
+          <span class="en">Focus</span>
+        </div>
+        <div class="lead">
+          <p>
+            Artificial intelligence and machine-learning applications, with an emphasis on healthcare-related computing. Interested in data processing &amp; engineering, time-series modelling, multi-source data integration, software system construction and AI-driven clinical auxiliary solutions.
           </p>
         </div>
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              <strong>B.Sc. in Computer Science</strong>, University of Bristol, UK
-            </div>
-            <div class="item-date">Sep. 2022 – Jun. 2026</div>
-          </div>
-          <p style="color: var(--text-secondary); font-size: 0.94rem;">
-            Relevant Courses: Artificial Intelligence, Software Engineering,
-            Algorithms, Computer Systems, Computer Architecture
+      </section>
+
+      <!-- ===== section: prospective research ===== -->
+      <section class="section" id="prospective-research">
+        <div class="section-head">
+          <h2>Prospective Doctoral Research</h2>
+          <span class="en">Ph.D. Focus</span>
+        </div>
+        <div class="lead">
+          <p>
+            My doctoral research centres on <strong>multimodal AI fusion for intelligent quality verification of radiological diagnosis</strong>. By integrating medical imaging, diagnostic report text and patient clinical data, it aims to accurately identify missed diagnosis, misdiagnosis and inconsistent diagnostic logic.
+          </p>
+          <p>
+            Built on my proven experience in clinical time-series modelling, medical image AI evaluation, full-stack medical informatics development and patented medical radiation device design, this work addresses the key limitation of current single-modal medical AI, evolving from <em>passive lesion recognition</em> to <em>active cross-modal diagnostic logic supervision</em>.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="card" id="research">
-        <h2 class="section-title">Research Experience</h2>
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              Applied Data Science | Early Prediction of Sepsis
+      <!-- ===== section: education ===== -->
+      <section class="section" id="education">
+        <div class="section-head">
+          <h2>Education</h2>
+          <span class="en">Academic</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">Sep 2026 – Jun 2027<br /><span style="opacity:.8;">Expected</span></div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">M.Sc. in Computer Science — University of Bristol, UK</div>
+              <div class="tl-meta">Deep Learning · Sustainable Computing · Advanced Topics in Computer Science · Individual Research Project</div>
             </div>
-            <div class="item-date">Sep. 2025 – Jun. 2026</div>
           </div>
-          <div class="item-supervisor">Supervisor: Prof. Saptarshi Sinha</div>
-          <ul>
-            <li>
-              Developed machine-learning solutions for clinical predictive tasks
-              using real-world patient datasets.
-            </li>
-            <li>
-              Performed full-cycle dataset processing: data cleaning,
-              missing-value imputation, feature importance analysis and
-              multi-dimensional data quality assessment.
-            </li>
-            <li>
-              Built reusable automated data processing pipelines; implemented
-              hybrid time-series models including GRU-D + LightGBM and BRITS +
-              LSTM, outperforming baseline clinical scores on held-out test sets.
-            </li>
-            <li>
-              Gained hands-on experience in complex dataset engineering and
-              applying deep-learning techniques to domain-specific challenges.
-            </li>
-          </ul>
-          <div class="item-link">
-            GitHub:
-            <a target="_blank" rel="noopener" href="https://github.com/billu615/Applied-Data-Science-CW-Sepsis.git">
-              billu615/Applied-Data-Science-CW-Sepsis
-              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              Software Engineering | Children's Mental Health Website
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">Sep 2022 – Jun 2026</div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">B.Sc. in Computer Science — University of Bristol, UK</div>
+              <div class="tl-meta">Artificial Intelligence · Software Engineering · Algorithms · Computer Systems · Computer Architecture</div>
             </div>
-            <div class="item-date">Sep. 2023 – Sep. 2024</div>
-          </div>
-          <div class="item-supervisor">Supervisor: Prof. Sarah</div>
-          <ul>
-            <li>
-              Collaborated to build a web-based resource platform for
-              public-health-related content delivery.
-            </li>
-            <li>
-              Designed MongoDB data schemas and unified data entry standards;
-              managed data models and multi-type content assets.
-            </li>
-            <li>
-              Implemented front-end modules with EJS and JavaScript; constructed
-              backend services based on Node.js and Express.js.
-            </li>
-            <li>
-              Practised end-to-end web development, business-oriented data
-              modelling and structured content management.
-            </li>
-          </ul>
-          <div class="item-link">
-            GitHub:
-            <a target="_blank" rel="noopener" href="https://github.com/spe-uob/2024-ThinkingSpace">
-              spe-uob/2024-ThinkingSpace
-              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
           </div>
         </div>
+      </section>
 
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              Team Project | Unity VR Accessibility Simulation
+      <!-- ===== section: research ===== -->
+      <section class="section" id="research">
+        <div class="section-head">
+          <h2>Research Experience</h2>
+          <span class="en">Projects</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">Sep 2025 – Jun 2026</div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">Applied Data Science — Early Prediction of Sepsis</div>
+              <div class="tl-meta">Supervisor: Prof. Saptarshi Sinha</div>
+              <div class="tl-body">
+                <ul>
+                  <li>Developed machine-learning solutions for clinical predictive tasks using real-world patient datasets.</li>
+                  <li>Performed full-cycle dataset processing: data cleaning, missing-value imputation, feature importance analysis and multi-dimensional data quality assessment.</li>
+                  <li>Built reusable automated data processing pipelines; implemented hybrid time-series models including GRU-D + LightGBM and BRITS + LSTM, outperforming baseline clinical scores on held-out test sets.</li>
+                  <li>Gained hands-on experience in complex dataset engineering and applying deep-learning techniques to domain-specific challenges.</li>
+                </ul>
+              </div>
+              <div class="tl-link">
+                GitHub:
+                <a target="_blank" rel="noopener" href="https://github.com/billu615/Applied-Data-Science-CW-Sepsis.git">
+                  billu615/Applied-Data-Science-CW-Sepsis
+                  <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
             </div>
-            <div class="item-date">Sep. 2025 – Jun. 2026</div>
           </div>
-          <div class="item-supervisor">Supervisor: Prof. Sarah</div>
-          <ul>
-            <li>
-              Developed an immersive VR simulation targeting
-              accessibility-related research scenarios with Unity.
-            </li>
-            <li>
-              Managed heterogeneous assets including 3D scenes, character
-              resources and physiological sensor signals.
-            </li>
-            <li>
-              Deployed LSTM-based time-series model for signal detection,
-              integrated hardware tactile feedback via haptic vest.
-            </li>
-            <li>
-              Built practical engineering capabilities for multi-source
-              heterogeneous-data integration and interactive system development.
-            </li>
-          </ul>
-          <div class="item-link">
-            GitLab:
-            <a target="_blank" rel="noopener" href="https://gitlab.com/justice-246/bttf/-/tree/dev/game?ref_type=heads">
-              justice-246/bttf
-              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-        </div>
 
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              Computer Systems | Conway's Game of Life Implemented in Go
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">Sep 2023 – Sep 2024</div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">Software Engineering — Children's Mental Health Website</div>
+              <div class="tl-meta">Supervisor: Prof. Sarah</div>
+              <div class="tl-body">
+                <ul>
+                  <li>Collaborated to build a web-based resource platform for public-health-related content delivery.</li>
+                  <li>Designed MongoDB data schemas and unified data entry standards; managed data models and multi-type content assets.</li>
+                  <li>Implemented front-end modules with EJS and JavaScript; constructed backend services based on Node.js and Express.js.</li>
+                  <li>Practised end-to-end web development, business-oriented data modelling and structured content management.</li>
+                </ul>
+              </div>
+              <div class="tl-link">
+                GitHub:
+                <a target="_blank" rel="noopener" href="https://github.com/spe-uob/2024-ThinkingSpace">
+                  spe-uob/2024-ThinkingSpace
+                  <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
             </div>
-            <div class="item-date">Sep. 2024 – Jan. 2025</div>
           </div>
-          <div class="item-supervisor">Supervisor: Prof. Tilo</div>
-          <ul>
-            <li>
-              Took part in project planning, literature review and formal
-              technical report writing.
-            </li>
-            <li>
-              Implemented cellular-automaton simulation in Go, including unit
-              testing and system-level performance optimisation.
-            </li>
-            <li>
-              Strengthened Go programming, performance tuning, literature survey
-              and academic technical-writing competencies.
-            </li>
-          </ul>
-          <div class="item-link">
-            GitHub:
-            <a target="_blank" rel="noopener" href="https://github.com/chw002/CSA_001.git">
-              chw002/CSA_001
-              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <div class="card" id="patents">
-        <h2 class="section-title">Patents (Granted Utility Model Patents)</h2>
-        <div class="patent-item">
-          <div class="patent-title">Medical Radiation Protection Screen</div>
-          <div class="patent-meta">
-            Patent No. ZL202421476455.6 | Granted 2024<br />
-            Inventors: C. Yan (1st), X. Huang (2nd). Contribution: Led
-            mechanical-structure design for medical radiological shielding
-            hardware.
-          </div>
-          <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-medical-radiation-shield.pdf">View Patent Certificate</a>
-        </div>
-        <div class="patent-item">
-          <div class="patent-title">Automatic Radiation Protection Screen</div>
-          <div class="patent-meta">
-            Patent No. ZL202120693771.9 | Granted 2021<br />
-            Inventors: Y. Yang (1st), C. Yan (2nd), J. He (3rd). Contribution:
-            Contributed to mechanical-structure and automatic-control design for
-            radiology-protection equipment.
-          </div>
-          <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-automatic-radiation-shield.pdf">View Patent Certificate</a>
-        </div>
-        <div class="patent-item">
-          <div class="patent-title">
-            Electromagnetic Relay-Based Switching Control Circuit and Medical
-            X-ray Protection Device
-          </div>
-          <div class="patent-meta">
-            Patent No. ZL202420775618.4 | Granted 2024<br />
-            Inventors: D. Qin (1st), X. Huang (2nd), C. Yan (3rd). Contribution:
-            Participated in control-circuit logic design for medical X-ray
-            protective devices.
-          </div>
-          <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-xray-protection-circuit.pdf">View Patent Certificate</a>
-        </div>
-      </div>
-
-      <div class="card" id="internship">
-        <h2 class="section-title">Internship</h2>
-        <div class="item">
-          <div class="item-header">
-            <div class="item-title">
-              Ruitai Imaging Technology (Shenzhen) Co., Ltd. | Full-stack
-              Development Intern
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">Sep 2025 – Jun 2026</div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">Team Project — Unity VR Accessibility Simulation</div>
+              <div class="tl-meta">Supervisor: Prof. Sarah</div>
+              <div class="tl-body">
+                <ul>
+                  <li>Developed an immersive VR simulation targeting accessibility-related research scenarios with Unity.</li>
+                  <li>Managed heterogeneous assets including 3D scenes, character resources and physiological sensor signals.</li>
+                  <li>Deployed LSTM-based time-series model for signal detection, integrated hardware tactile feedback via haptic vest.</li>
+                  <li>Built practical engineering capabilities for multi-source heterogeneous-data integration and interactive system development.</li>
+                </ul>
+              </div>
+              <div class="tl-link">
+                GitLab:
+                <a target="_blank" rel="noopener" href="https://gitlab.com/justice-246/bttf/-/tree/dev/game?ref_type=heads">
+                  justice-246/bttf
+                  <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
             </div>
-            <div class="item-date">DingTalk Open-Platform Ecosystem</div>
           </div>
-          <ul>
-            <li>
-              Conducted end-to-end requirement analysis, database schema design
-              and full-stack application development.
-            </li>
-            <li>
-              Implemented procurement, warehousing and inventory-control modules
-              leveraging DingTalk API with Node.js, MongoDB and JavaScript.
-            </li>
-            <li>
-              Replaced offline manual ledger workflows; boosted warehouse
-              inbound-outbound efficiency by <span class="highlight-metric">40%</span> and reduced manual-input
-              errors, enabling unified visualised business-data management.
-            </li>
-            <li>
-              Accumulated practical experience building enterprise-grade
-              data-centric systems and database optimisation for medical-related
-              informatics research.
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="card" id="skills">
-        <h2 class="section-title">Skills</h2>
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">Sep 2024 – Jan 2025</div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">Computer Systems — Conway's Game of Life in Go</div>
+              <div class="tl-meta">Supervisor: Prof. Tilo</div>
+              <div class="tl-body">
+                <ul>
+                  <li>Took part in project planning, literature review and formal technical report writing.</li>
+                  <li>Implemented cellular-automaton simulation in Go, including unit testing and system-level performance optimisation.</li>
+                  <li>Strengthened Go programming, performance tuning, literature survey and academic technical-writing competencies.</li>
+                </ul>
+              </div>
+              <div class="tl-link">
+                GitHub:
+                <a target="_blank" rel="noopener" href="https://github.com/chw002/CSA_001.git">
+                  chw002/CSA_001
+                  <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== section: patents ===== -->
+      <section class="section" id="patents">
+        <div class="section-head">
+          <h2>Patents</h2>
+          <span class="en">Granted Utility Models</span>
+        </div>
+        <div class="patent-list">
+          <div class="patent-item">
+            <div class="patent-title">Medical Radiation Protection Screen</div>
+            <div class="patent-meta">
+              Patent No. ZL202421476455.6 | Granted 2024<br />
+              Inventors: C. Yan (1st), X. Huang (2nd). Contribution: Led mechanical-structure design for medical radiological shielding hardware.
+            </div>
+            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-medical-radiation-shield.pdf">View Patent Certificate</a>
+          </div>
+          <div class="patent-item">
+            <div class="patent-title">Automatic Radiation Protection Screen</div>
+            <div class="patent-meta">
+              Patent No. ZL202120693771.9 | Granted 2021<br />
+              Inventors: Y. Yang (1st), C. Yan (2nd), J. He (3rd). Contribution: Contributed to mechanical-structure and automatic-control design for radiology-protection equipment.
+            </div>
+            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-automatic-radiation-shield.pdf">View Patent Certificate</a>
+          </div>
+          <div class="patent-item">
+            <div class="patent-title">Electromagnetic Relay-Based Switching Control Circuit and Medical X-ray Protection Device</div>
+            <div class="patent-meta">
+              Patent No. ZL202420775618.4 | Granted 2024<br />
+              Inventors: D. Qin (1st), X. Huang (2nd), C. Yan (3rd). Contribution: Participated in control-circuit logic design for medical X-ray protective devices.
+            </div>
+            <a class="patent-cert-btn" target="_blank" rel="noopener" href="patent-xray-protection-circuit.pdf">View Patent Certificate</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== section: internship ===== -->
+      <section class="section" id="internship">
+        <div class="section-head">
+          <h2>Internship</h2>
+          <span class="en">Industry</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date">DingTalk Ecosystem</div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title">Ruitai Imaging Technology (Shenzhen) Co., Ltd. — Full-stack Development Intern</div>
+              <div class="tl-body">
+                <ul>
+                  <li>Conducted end-to-end requirement analysis, database schema design and full-stack application development.</li>
+                  <li>Implemented procurement, warehousing and inventory-control modules leveraging DingTalk API with Node.js, MongoDB and JavaScript.</li>
+                  <li>Replaced offline manual ledger workflows; boosted warehouse inbound-outbound efficiency by <strong>40%</strong> and reduced manual-input errors, enabling unified visualised business-data management.</li>
+                  <li>Accumulated practical experience building enterprise-grade data-centric systems and database optimisation for medical-related informatics research.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== section: skills ===== -->
+      <section class="section" id="skills">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <span class="en">Toolkit</span>
+        </div>
         <div class="skill-group">
           <div class="skill-label">AI &amp; Machine Learning</div>
           <div class="skill-tags">
@@ -937,10 +796,7 @@
             <span class="tag tag-skilled">English (Academic reading &amp; writing)</span>
           </div>
         </div>
-      </div>
-
-      <footer>&copy; 2026 CHENGZHI YAN</footer>
-    </div>
+      </section>
 
     <button id="backTop" aria-label="Back to top">↑</button>
 
@@ -948,22 +804,16 @@
       const backTopBtn = document.getElementById("backTop");
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-          backTopBtn.classList.add("show");
-        } else {
-          backTopBtn.classList.remove("show");
-        }
-        if (window.scrollY > 20) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
+        if (window.scrollY > 400) backTopBtn.classList.add("show");
+        else backTopBtn.classList.remove("show");
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      }, { passive: true });
       backTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
-      const sections = document.querySelectorAll(".card[id]");
+      const sections = document.querySelectorAll(".section[id]");
       const navLinks = document.querySelectorAll(".nav-menu a[data-target]");
       const observer = new IntersectionObserver(
         (entries) => {
@@ -972,14 +822,12 @@
               const id = entry.target.getAttribute("id");
               navLinks.forEach((link) => {
                 link.classList.remove("active");
-                if (link.dataset.target === id) {
-                  link.classList.add("active");
-                }
+                if (link.dataset.target === id) link.classList.add("active");
               });
             }
           });
         },
-        { root: null, rootMargin: "-30% 0px -60% 0px" }
+        { rootMargin: "-35% 0px -60% 0px" }
       );
       sections.forEach((s) => observer.observe(s));
 
@@ -989,7 +837,7 @@
         hamburger.classList.toggle("open");
         navMenu.classList.toggle("open");
       });
-      navMenu.querySelectorAll("a").forEach((link) => {
+      navMenu.querySelectorAll("a[data-target]").forEach((link) => {
         link.addEventListener("click", () => {
           hamburger.classList.remove("open");
           navMenu.classList.remove("open");
@@ -1001,17 +849,12 @@
       const iconMoon = document.getElementById("iconMoon");
       function setTheme(theme) {
         document.documentElement.setAttribute("data-theme", theme);
-        if (theme === "dark") {
-          iconSun.style.display = "block";
-          iconMoon.style.display = "none";
-        } else {
-          iconSun.style.display = "none";
-          iconMoon.style.display = "block";
-        }
-        try { localStorage.setItem("theme", theme); } catch(e) {}
+        iconSun.style.display = theme === "dark" ? "block" : "none";
+        iconMoon.style.display = theme === "dark" ? "none" : "block";
+        try { localStorage.setItem("theme", theme); } catch (e) {}
       }
       let savedTheme = "light";
-      try { savedTheme = localStorage.getItem("theme") || "light"; } catch(e) {}
+      try { savedTheme = localStorage.getItem("theme") || "light"; } catch (e) {}
       setTheme(savedTheme);
       themeToggle.addEventListener("click", () => {
         const current = document.documentElement.getAttribute("data-theme");
@@ -1020,3 +863,4 @@
     </script>
   </body>
 </html>
+<!-- （注：内容由AI生成） -->
