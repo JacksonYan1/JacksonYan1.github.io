@@ -300,6 +300,22 @@
       .lead p + p { margin-top: 14px; }
       .lead strong { color: var(--text); font-weight: 600; }
       .lead em { font-style: normal; color: var(--accent); font-weight: 600; }
+      .plan-link { margin-top: 18px; }
+      .plan-link a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 18px;
+        border-radius: 8px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--accent-deep);
+        background: #eef2fb;
+        border: 1px solid #d8e0f2;
+        transition: all 0.2s ease;
+      }
+      .plan-link a svg { width: 15px; height: 15px; }
+      .plan-link a:hover { background: #e2e9f8; transform: translateY(-1px); text-decoration: none; }
 
       /* ---------- timeline ---------- */
       .timeline {
@@ -586,6 +602,12 @@
             基于我在临床时间序列建模、医学影像 AI 评估、全栈医疗信息学开发及医疗辐射防护设备专利方面的实践积累，该研究直指当前单模态医疗 AI 的关键局限，从<em>被动病灶识别</em>走向<em>主动的跨模态诊断逻辑监督</em>。
           </p>
         </div>
+        <div class="plan-link">
+          <a href="DOCTORAL-RESEARCH-PLAN-2.docx" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+            <span class="lang-en">View Research Plan</span><span class="lang-zh">查看研究计划</span>
+          </a>
+        </div>
       </section>
 
       <!-- ===== section: education ===== -->
@@ -621,6 +643,62 @@
           <span class="en lang-en">Projects</span><span class="en lang-zh">项目</span>
         </div>
         <div class="timeline">
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date"><span class="lang-en">Summer 2024</span><span class="lang-zh">2024 年暑期</span></div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title"><span class="lang-en">AI R&amp;D Intern — Report Quality Assessment System</span><span class="lang-zh">AI 研发实习 — 报告质量评价系统</span></div>
+              <div class="tl-meta"><span class="lang-en">Radtech Imaging Technology (Shenzhen) Co., Ltd.</span><span class="lang-zh">瑞泰影像科技（深圳）有限公司（Radtech Imaging Technology）</span></div>
+              <div class="tl-body">
+                <ul class="lang-en">
+                  <li>Developed AI-based text recognition and semantic analysis for the Report Quality Assessment System: designed a text rule engine and key-content extraction modules to parse radiology report structure, including body parts, findings, size, count and diagnostic conclusions.</li>
+                  <li>Built a 170k-entry medical lexicon with jieba word segmentation, Word2Vec pre-trained vectors and extensive regex rules; extracted subjects and compared findings against a lesion dictionary for structural checks.</li>
+                  <li>Handled negation and uncertainty semantics (e.g., distinguishing "no abnormality seen" from "not mentioned"); upgraded to a second-version semantic recognition pipeline that extracts subject–verb–object triples, with special handling for non-sequential, abbreviated report writing.</li>
+                  <li>Implemented typo detection based on MacBERT-base with homophone and similar-character recognition (≈95% accuracy on detected typos), fine-tuning the medical lexicon to reduce false positives.</li>
+                  <li>Covered 15 quality-control dimensions: missing body parts, terminology misuse (CT-density vs MRI-signal), punctuation errors (Chinese/English mixing), laterality mismatch, examination-method errors (enhanced vs plain scan), contradictory language, measurement errors, gender errors, missing RADS grading, description–conclusion mismatch, undecided-diagnosis handling, report timeliness, typos, examination-item laterality and sensitive words.</li>
+                  <li>Evaluated diagnosis–imaging consistency with a large language model and generated medical-history summaries via lesion/organ extraction; gained hands-on experience in medical NLP, rule-engine design and clinical quality-control workflows.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>参与报告质量评价分析系统研发，实现 AI 文字识别与语义分析：设计文本规则引擎与关键语义抽取模块，解析放射报告结构（部位、征象、大小、数量与诊断结论）。</li>
+                  <li>构建 17 万词条医学词库，结合 jieba 分词、Word2Vec 预训练词向量与大量正则规则；提取主语并与病灶字典比对，完成结构化检查。</li>
+                  <li>处理否定与不确定性语义（区分「未见异常」与「未提及」）；升级第二版语义识别，提取「主语—谓语—宾语」三元组，并针对非顺序、过于简略的报告写法做特殊处理。</li>
+                  <li>基于 MacBERT-base 实现错别字检测（同音、相似字识别，检出准确率约 95%），并通过医疗词库调优降低误报。</li>
+                  <li>覆盖 15 类质控维度：部位缺失、术语不规范（CT 用「密度」、MRI 用「信号」）、标点中英文混用、方位不符、检查方法错误（增强 vs 平扫）、语言矛盾、测量错误、性别错误、RADS 分级缺失、描述与结论不对应、未明确诊断的处理意见、报告及时性、错别字、检查项目方位不符、敏感词。</li>
+                  <li>使用大语言模型评估诊断—影像一致性，并通过病灶与器官筛选生成病史摘要；积累了医学 NLP、规则引擎设计与临床质控流程的实战经验。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date"><span class="lang-en">Summer 2025</span><span class="lang-zh">2025 年暑期</span></div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title"><span class="lang-en">AI R&amp;D Intern — Image Quality Assessment System</span><span class="lang-zh">AI 研发实习 — 图像质量评价系统</span></div>
+              <div class="tl-meta"><span class="lang-en">Radtech Imaging Technology (Shenzhen) Co., Ltd.</span><span class="lang-zh">瑞泰影像科技（深圳）有限公司（Radtech Imaging Technology）</span></div>
+              <div class="tl-body">
+                <ul class="lang-en">
+                  <li>Developed AI-based image recognition for the Image Quality Assessment System: body-position recognition, anatomical structure segmentation, radiographic coverage measurement and foreign-body/artifact detection.</li>
+                  <li>Implemented semantic segmentation with DeepLab v3+ to produce masks, and used OpenCV to compute bounding boxes, positions and angles for structure localisation and measurement.</li>
+                  <li>Applied data augmentation (left-right flipping, Gaussian blur, HSV colour-space transforms, random brightness/contrast, elastic deformation) to improve recognition robustness; adjusted resolution for body parts barely visible to the naked eye.</li>
+                  <li>Tackled overfitting caused by cross-hospital data variance (e.g., steel implants and fractures) by explicitly including foreign bodies such as implants in model training; used a 3:1 training–validation split.</li>
+                  <li>Implemented quantitative scoring of image metrics including information entropy, detail fidelity and noise, building automated image-quality evaluation pipelines.</li>
+                  <li>Participated in a national medical-insurance chest X-ray multi-disease recognition competition, with a technical approach covering MAE self-supervised pretraining, a ViT backbone, multi-granularity classification heads, disease GCN graph inference and ASL asymmetric loss.</li>
+                  <li>Gained hands-on experience in medical imaging, structure segmentation and quality-assessment engineering, laying a solid foundation for multimodal AI research in radiology.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>参与图像质量评价分析系统研发，实现 AI 图像识别：体位识别、解剖结构分割、摄影范围测量与异物/伪影检测。</li>
+                  <li>基于 DeepLab v3+ 实现语义分割生成掩膜，并使用 OpenCV 计算外接矩形、位置与角度，完成结构定位与测量。</li>
+                  <li>应用数据增强（左右翻转、高斯模糊、HSV 颜色空间变换、随机亮度对比度、弹性形变）提升识别鲁棒性；对肉眼难以辨认的部位调整分辨率。</li>
+                  <li>针对跨医院数据差异（如钢钉、骨折）导致的过拟合，将钢钉等异物显式纳入模型训练，并采用 3:1 的训练/验证集划分。</li>
+                  <li>对信息熵、细节显示、噪声等图像指标进行量化评分，构建图像质量自动评价流程。</li>
+                  <li>参与全国医保影像 AI 识图大赛，技术方案涵盖 MAE 自监督预训练、ViT 骨干网络、多粒度分类头、Disease GCN 图推理与 ASL 非对称损失函数。</li>
+                  <li>系统掌握了医学图像、结构分割与质量评价工程实践，为放射科多模态 AI 研究奠定基础。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div class="tl-item" style="display:contents;">
             <div class="tl-date"><span class="lang-en">Sep 2025 – Jun 2026</span><span class="lang-zh">2025.09 – 2026.06</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
@@ -783,10 +861,28 @@
         </div>
         <div class="timeline">
           <div class="tl-item" style="display:contents;">
-            <div class="tl-date"><span class="lang-en">DingTalk Ecosystem</span><span class="lang-zh">钉钉开放生态</span></div>
+            <div class="tl-date"><span class="lang-en">2024 – 2025</span><span class="lang-zh">2024 – 2025</span></div>
             <div class="tl-axis"><span class="tl-dot"></span></div>
             <div class="tl-content">
-              <div class="tl-title"><span class="lang-en">Ruitai Imaging Technology (Shenzhen) Co., Ltd. — Full-stack Development Intern</span><span class="lang-zh">深圳锐泰影像技术有限公司 — 全栈开发实习生</span></div>
+              <div class="tl-title"><span class="lang-en">Radtech Imaging Technology (Shenzhen) Co., Ltd. — AI Intern</span><span class="lang-zh">瑞泰影像科技（深圳）有限公司 — AI 实习生</span></div>
+              <div class="tl-body">
+                <ul class="lang-en">
+                  <li>Developed AI-based image recognition for the Image Quality Assessment System, including body-position recognition, anatomical structure segmentation, parameter measurement and automated image scoring.</li>
+                  <li>Built AI-based text recognition and semantic analysis for the Report Quality Assessment System, including a text rule engine, semantic extraction modules and multi-dimensional report rating.</li>
+                </ul>
+                <ul class="lang-zh">
+                  <li>参与图像质量评价分析系统研发，实现 AI 图像识别：体位识别、结构分割、参数测量与图像自动评分。</li>
+                  <li>参与报告质量评价分析系统研发，实现 AI 文字识别与语义分析：文本规则引擎、关键语义抽取与多维度报告评级。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item" style="display:contents;">
+            <div class="tl-date"><span class="lang-en">2021 – 2023<br /><span style="opacity:.8;">DingTalk Ecosystem</span></span><span class="lang-zh">2021 – 2023<br /><span style="opacity:.8;">钉钉开放生态</span></span></div>
+            <div class="tl-axis"><span class="tl-dot"></span></div>
+            <div class="tl-content">
+              <div class="tl-title"><span class="lang-en">Radtech Imaging Technology (Shenzhen) Co., Ltd. — Full-stack Development Intern</span><span class="lang-zh">瑞泰影像科技（深圳）有限公司 — 全栈开发实习生</span></div>
               <div class="tl-body">
                 <ul class="lang-en">
                   <li>Conducted end-to-end requirement analysis, database schema design and full-stack application development.</li>
@@ -954,3 +1050,4 @@
     </script>
   </body>
 </html>
+<!-- （注：内容由AI生成） -->
